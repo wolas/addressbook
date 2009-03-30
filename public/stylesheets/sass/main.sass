@@ -1,0 +1,114 @@
+!light_blue = #bde3fe
+!dark_blue = #23567a
+
+=round_borders
+  :-moz-border-radius 6px
+  :-webkit-border-radius 6px
+
+
+=error
+  :border 1px solid #cd0a0a
+  :background #b81900 url(/images/ui-bg_diagonals-thick_40_b81900_40x40.png) 50% 50% repeat
+  :color #ffffff
+
+body
+  :font
+    :family verdana, arial, helvetica, sans-serif
+    :size 0.9em
+  :padding
+    :left 50px
+    :right 50px
+
+#content
+  :margin
+    :top 20px
+a
+  :color orange
+  :text-decoration none
+
+a:hover
+  :text-decoration underline
+
+th
+  :text-align left
+
+.clear
+  :height 1px
+  :clear both
+
+.two_col
+  :width 45%
+  :float left
+
+#user_badge
+  :float right
+  :width 320px
+
+
+#menu
+  :float left
+  :display inline
+  :font
+    :size 1.5em
+    :color #333333
+  :padding
+    :top 15px
+
+.widget
+  :padding
+    :left 10px
+    :right 10px
+    :top 5px
+    :bottom 5px
+
+  :margin-bottom 10px
+  +round_borders
+
+.middle
+  :vertical-align middle
+
+.attribute
+  :display table-row
+
+  .name
+    :display table-cell
+    :font-weight bold
+    :padding
+      :right 10px
+      :bottom 5px
+      :top 5px
+  .value
+    :display table-cell
+
+.fieldWithErrors
+  :color red
+
+
+#errorExplanation
+  :font-weight bold
+  :padding 7px
+  :padding-bottom 12px
+  :margin-bottom 20px
+  +error
+  +round_borders
+
+  h2
+    :display none
+    :text-align left
+    :font-weight bold
+    :padding 5px 5px 5px 15px
+    :font-size 12px
+    :margin -7px
+    :background-color #c00
+    :color #fff
+
+  p
+    :color #333
+    :margin-bottom 0
+    :padding 5px
+
+
+  ul
+    li
+      :font-size 12px
+      :list-style square
