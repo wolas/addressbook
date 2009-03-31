@@ -2,7 +2,7 @@
 %html
   %head
     %title
-      Progress - Project Management
+      AddressBook
       - if logged_in?
         \-
         = current_user.login
@@ -15,9 +15,7 @@
       #menu
         = link_to_unless_current 'Users', users_url
         |
-        = link_to_unless_current 'Clients', clients_url
-        |
-        = link_to_unless_current 'Projects', projects_url
+        = link_to_unless_current 'Companies', companies_url
 
       #user_badge.ui-widget-content.widget
         .two_col

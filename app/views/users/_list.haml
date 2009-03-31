@@ -1,0 +1,13 @@
+- groups ||= 3
+- object ||= nil
+
+%table{:width => "100%"}
+  %tr
+    %th Name
+    %th Phone
+    %th Email
+  - users.each do |user|
+    %tr
+      %td= render :partial => "users/widget", :locals => {:user => user}
+      %td= user.phone
+      %td= user.email

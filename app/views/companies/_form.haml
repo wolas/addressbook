@@ -1,0 +1,15 @@
+.ui-widget-content.widget
+  -form_for company do |f|
+    = f.error_messages
+
+    .attribute
+      .name= f.label :name
+      .value= f.text_field :name
+    .attribute
+      .name= f.label :city
+      .value= f.text_field :city
+    .attribute
+      .name= f.label :street
+      .value= f.text_field :street
+
+    .company_submit_button= f.submit "Save"
