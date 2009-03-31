@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all :order => 'login DESC'
+    @users = User.all :order => 'login ASC'
   end
 
   def new
