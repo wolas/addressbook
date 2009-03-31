@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :except => [:new, :create]
+
+  def search
+    users = User.all :conditions => ["login LIKE ?", '%' + params[:query] + '%']
+    render :partial => 'users/list', :locals => {:users => users}
+  end
 
   def index
-    @company = Company.find params[:company_id]
-    @users = @company.users
+    @users = User.all :order => 'login DESC'
   end
 
   def new

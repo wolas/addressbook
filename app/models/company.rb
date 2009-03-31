@@ -1,3 +1,3 @@
 class Company < ActiveRecord::Base
-  has_many :usersm, :order => 'login DESC'
+  has_many :users, :order => 'login DESC'
 end

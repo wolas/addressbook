@@ -13,12 +13,22 @@
 #create_user{:style => 'display:none;'}
   = render :partial => 'form', :locals => {:user => User.new }
 
-%table
+%table{:width => "100%"}
   %tr
     %th User
+    %th Surname
+    %th Company
+    %th Phone
+    %th Mobile
+    %th Email
 
   - @users.each do |user|
     %tr
       %td{:width => "200px"}
         = image_tag gravatar_url(user.email), :style => "vertical-align:middle;"
         = link_to h(user.login), user
+      %td= user.surname
+      %td= link_to user.company.name, user.company
+      %td= user.phone
+      %td= user.mobile
+      %td= mail_to user.email

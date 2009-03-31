@@ -12,13 +12,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user, :logged_in?
 
-  before_filter :require_user, :if => :secure?
-
   private
-  def secure?
-    true
-  end
-
   def logged_in?
     current_user ? true : false
   end

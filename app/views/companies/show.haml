@@ -27,10 +27,16 @@
   - page[:cancel_edit_company_link].hide
   - page[:edit_company_link].visual_effect :appear
 
-|
-= link_to 'Back', companies_path
+
 
 
 - unless @company.users.empty?
-  %h3 Users
-  = render :partial => 'users/list', :locals => {:users => @company.users}
+
+  %h3
+    Users
+    = text_field_tag :search
+    = observe_field :search, :url => { :action => :search }, :frequency => 0.25, :update => :search_results, :with => "'name=' + value + '&' + 'company=#{@company.id}'"
+
+
+  #search_results
+    = render :partial => 'users/list', :locals => {:users => @company.users}

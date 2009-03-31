@@ -1,5 +1,10 @@
 class CompaniesController < ApplicationController
-  
+
+  def search
+    users = Company.find(params[:company]).users.all :conditions => ["login LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
+    render :partial => 'users/list', :locals => {:users => users}
+  end
+
   # GET /companies
   def index
     @companies = Company.find(:all)

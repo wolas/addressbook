@@ -7,7 +7,7 @@
       .name Company
       .value= f.collection_select :company_id, Company.all, :id, :name
     .attribute
-      .name= f.label :login
+      .name= f.label :login, 'Name (login)'
       .value= f.text_field :login
     .attribute
       .name= f.label :surname
