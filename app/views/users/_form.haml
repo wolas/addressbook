@@ -27,6 +27,10 @@
     .attribute
       .name= f.label :fax
       .value= f.text_field :fax
+    - if admin?
+      .attribute
+        .name= f.label :admin
+        .value= f.check_box :admin
 
     .attribute
       .name= f.label :password, user.new_record? ? nil : "Change password"
