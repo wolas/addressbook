@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   end
 
   def name
-    login.capitalize + "" + surname.capitalize
+    result = login.capitalize
+    result += " " + surname.capitalize if surname
+    result
   end
 end
