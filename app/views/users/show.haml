@@ -10,27 +10,34 @@
     .name Surname
     .value= @user.surname
   .attribute
-    .name Name
-    .value= @user.login
+    .name Phone
+    .value= @user.phone
+  .attribute
+    .name Mobile
+    .value= @user.mobile
+  .attribute
+    .name Fax
+    .value= @user.fax
   .attribute
     .name Email
-    .value= @user.email
+    .value= mail_to @user.email
   .attribute
-    .name Password
-    .value= "*" * 8
+    .name Company
+    .value= link_to @user.company.name, @user.company
 
-#update_user{:style => 'display:none;'}
-  = render :partial => 'form', :locals => {:user => @user }
+- if @user == current_user
+  #update_user{:style => 'display:none;'}
+    = render :partial => 'form', :locals => {:user => @user }
 
-%p
-  = link_to_function 'Edit', :href => edit_user_path(@user), :id => "edit_user_link" do |page|
-    - page[:user_show].visual_effect :blind_up, :duration => 0.5
-    - page[:update_user].visual_effect :blind_down, :duration => 0.5
-    - page[:edit_user_link].hide
-    - page[:cancel_edit_user_link].visual_effect :appear
+  %p
+    = link_to_function 'Edit', :href => edit_user_path(@user), :id => "edit_user_link" do |page|
+      - page[:user_show].visual_effect :blind_up, :duration => 0.5
+      - page[:update_user].visual_effect :blind_down, :duration => 0.5
+      - page[:edit_user_link].hide
+      - page[:cancel_edit_user_link].visual_effect :appear
 
-  = link_to_function 'Cancel', :href => nil, :id => 'cancel_edit_user_link', :style => "display:none;" do |page|
-    - page[:user_show].visual_effect :blind_down, :duration => 0.5
-    - page[:update_user].visual_effect :blind_up, :duration => 0.5
-    - page[:cancel_edit_user_link].hide
-    - page[:edit_user_link].visual_effect :appear
+    = link_to_function 'Cancel', :href => nil, :id => 'cancel_edit_user_link', :style => "display:none;" do |page|
+      - page[:user_show].visual_effect :blind_down, :duration => 0.5
+      - page[:update_user].visual_effect :blind_up, :duration => 0.5
+      - page[:cancel_edit_user_link].hide
+      - page[:edit_user_link].visual_effect :appear

@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def show
     @user = params[:id] ? User.find(params[:id]) : @current_user
-    return authorization_failed! if @user != current_user and !admin?
+    return authorization_failed! if @user.company != current_user.company and !admin?
   end
 
   def edit
