@@ -2,9 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  include UsersHelper
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
   layout 'main'
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
@@ -13,6 +14,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :logged_in?
 
   private
+  def authorization_failed!
+    flash[:error] = "You have no permission to perform this action"
+    redirect_to(account_path)
+  end
+
   def logged_in?
     current_user ? true : false
   end
@@ -25,6 +31,10 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
+  end
+
+  def require_admin
+    return authorization_failed! unless admin?
   end
 
   def require_user

@@ -1,3 +1,6 @@
+- surname ||= false
+
 %span{:style => 'vertical-align: middle;'}
   = image_tag gravatar_url(user.email)
-  = link_to h(user.login), user
+  - link = ' ' + user.surname.to_s if surname
+  = link_to h(user.login + link.to_s), user

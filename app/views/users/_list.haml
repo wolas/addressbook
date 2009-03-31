@@ -1,16 +1,23 @@
-%table{:width => "100%"}
-  %tr
-    %th User
-    %th Surname
-    %th Phone
-    %th Mobile
-    %th Email
+- show_company ||= false
 
-  - users.each do |user|
+.ui-widget-content.widget
+  %table{:width => "100%"}
     %tr
-      %td{:width => "200px"}
-        = render :partial => "users/widget", :locals => {:user => user}
-      %td= user.surname
-      %td= user.phone
-      %td= user.mobile
-      %td= mail_to user.email
+      %th User
+      %th Surname
+      %th Phone
+      %th Mobile
+      %th Email
+      - if show_company
+        %th Company
+
+    - users.each do |user|
+      %tr
+        %td{:width => "200px"}
+          = render :partial => "users/widget", :locals => {:user => user}
+        %td= user.surname
+        %td= user.phone
+        %td= user.mobile
+        %td= mail_to user.email
+        - if show_company
+          %td= link_to user.company.name, user.company

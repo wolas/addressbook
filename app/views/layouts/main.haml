@@ -13,15 +13,21 @@
   %body
     - if logged_in?
       #menu
-        = link_to_unless_current 'Users', users_url
-        |
-        = link_to_unless_current 'Companies', companies_url
+        - if admin?
+          = link_to_unless_current 'Users', users_url
+          |
+          = link_to_unless_current 'Companies', companies_url
+          |
+          = link_to 'Roles', roles_path
+          |
+          = link_to_unless_current current_user.company.name, current_user.company
+
+        - else
+          = link_to_unless_current current_user.company.name, current_user.company
 
       #user_badge.ui-widget-content.widget
         .two_col
-          %span
-            = image_tag gravatar_url(current_user.email), :style => "vertical-align:middle;"
-            = link_to h(current_user.login), current_user
+          = link_to image_tag(gravatar_url(current_user.email)), current_user
         .two_col
           = link_to 'Logout', logout_url
           |

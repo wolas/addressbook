@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
+  before_filter :require_admin, :only => [:index]
 
   def search
-    users = User.all :conditions => ["login LIKE ?", '%' + params[:query] + '%']
+    users = User.all :conditions => ["login LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
     render :partial => 'users/list', :locals => {:users => users}
   end
 
@@ -25,7 +26,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = @current_user
+    @user = params[:id] ? User.find(params[:id]) : @current_user
+    return authorization_failed! if @user != current_user and !admin?
   end
 
   def edit
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = @current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to account_url
