@@ -18,7 +18,7 @@
           |
           = link_to_unless_current 'Companies', companies_url
           |
-          = link_to 'Roles', roles_path
+          = link_to_unless_current 'Roles', roles_path
           |
           = link_to_unless_current current_user.company.name, current_user.company
 

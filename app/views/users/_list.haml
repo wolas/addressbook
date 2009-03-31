@@ -4,7 +4,6 @@
   %table{:width => "100%"}
     %tr
       %th User
-      %th Surname
       %th Phone
       %th Mobile
       %th Email
@@ -13,9 +12,8 @@
 
     - users.each do |user|
       %tr
-        %td{:width => "200px"}
-          = render :partial => "users/widget", :locals => {:user => user}
-        %td= user.surname
+        %td{:style => "min-width:100px;"}
+          = render :partial => "users/widget", :locals => {:user => user, :surname => true}
         %td= user.phone
         %td= user.mobile
         %td= mail_to user.email
