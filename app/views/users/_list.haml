@@ -7,15 +7,21 @@
       %th Phone
       %th Mobile
       %th Email
+      %th Skype
       - if show_company
         %th Company
 
     - users.each do |user|
       %tr
-        %td{:style => "min-width:100px;"}
-          = render :partial => "users/widget", :locals => {:user => user, :surname => true}
+        %td{:style => "min-width:100px;"}= widget_for user, true
         %td= user.phone
         %td= user.mobile
         %td= mail_to user.email
+        %td
+          - if user.skype?
+            %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
+            %a{:href=>"skype:#{user.skype}?chat"}
+              %img{:src=>"http://mystatus.skype.com/smallclassic/#{user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
+
         - if show_company
           %td= link_to user.company.name, user.company

@@ -17,4 +17,9 @@ class User < ActiveRecord::Base
     result += " " + surname.capitalize if surname
     result
   end
+
+  def skype?
+    return false if skype.nil? or skype.empty?
+    true
+  end
 end
