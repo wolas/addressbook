@@ -17,11 +17,16 @@
   %br
 
 .ui-widget-content.widget
-  %table{:width => "50%"}
+  %table{:width => "100%"}
     %tr
       %th Name
       %th City
       %th Street
+      %th Number
+      %th Postcode
+      %th Phone
+      %th Fax
+      %th P.IVA
       %th Users
 
     -for company in @companies
@@ -29,6 +34,11 @@
         %td= link_to h(company.name), company
         %td= h company.city
         %td= h company.street
+        %td= h company.number
+        %td= h company.postcode
+        %td= h company.phone
+        %td= h company.fax
+        %td= h company.iva
         %td= company.users.count
 
         - if admin?

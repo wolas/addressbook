@@ -1,0 +1,6 @@
+- for user in users
+  - form_tag :action => :update_roles, :id => user do
+    .attribute
+      .value= check_box_tag 'admin', true, user.admin?, :id => "check_box_#{user.id}"
+      .name{:width => '300px'}= widget_for user, true
+      = observe_field "check_box_#{user.id}", :url => { :action => :update_roles }, :frequency => 0.25, :with => "'admin=' + value + '&' + 'id=#{user.id}'"

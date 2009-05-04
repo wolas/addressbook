@@ -1,15 +1,7 @@
-%h1 Roles
+%h1 Admins
+
+= render :partial => 'users/search', :locals => {:company => true}
 
 .ui-widget-content.widget
-  %table
-    %tr
-      %th Name
-      %th Admin?
-      %th &nbsp;
-
-    - for user in @users
-      - form_tag :action => :update_roles, :id => user do
-        %tr
-          %td{:width => '300px'}= widget_for user, true
-          %td= check_box_tag 'admin', true, user.admin?, :id => "check_box_#{user.id}"
-          %td= observe_field "check_box_#{user.id}", :url => { :action => :update_roles }, :frequency => 0.25, :with => "'admin=' + value + '&' + 'id=#{user.id}'"
+  #search_results
+    = render :partial => 'list', :locals => {:users => @users}

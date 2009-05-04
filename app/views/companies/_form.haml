@@ -11,5 +11,20 @@
     .attribute
       .name= f.label :street
       .value= f.text_field :street
+    .attribute
+      .name= f.label :number
+      .value= f.text_field :number
+    .attribute
+      .name= f.label :postcode, 'post code'
+      .value= f.text_field :postcode
+    .attribute
+      .name= f.label :phone
+      .value= f.text_field :phone
+    .attribute
+      .name= f.label :fax
+      .value= f.text_field :fax
+    .attribute
+      .name= f.label :iva
+      .value= f.text_field :iva
 
     .company_submit_button= f.submit "Save"
