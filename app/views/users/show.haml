@@ -22,22 +22,33 @@
     .name Email
     .value= mail_to @user.email
   .attribute
-    .name Company
-    .value= link_to @user.company.name, @user.company
+    .name Skype
+    .value
+      - if @user.skype?
+        %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
+        %a{:href=>"skype:#{@user.skype}?chat"}
+          %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
 
-- if @user == current_user
+%br
+- if admin?
   #update_user{:style => 'display:none;'}
     = render :partial => 'form', :locals => {:user => @user }
 
-  %p
-    = link_to_function 'Edit', :href => edit_user_path(@user), :id => "edit_user_link" do |page|
-      - page[:user_show].visual_effect :blind_up, :duration => 0.5
-      - page[:update_user].visual_effect :blind_down, :duration => 0.5
-      - page[:edit_user_link].hide
-      - page[:cancel_edit_user_link].visual_effect :appear
+  = link_to_function 'Edit', :href => edit_user_path(@user), :id => "edit_user_link" do |page|
+    - page[:user_show].visual_effect :blind_up, :duration => 0.5
+    - page[:update_user].visual_effect :blind_down, :duration => 0.5
+    - page[:edit_user_link].hide
+    - page[:cancel_edit_user_link].visual_effect :appear
 
-    = link_to_function 'Cancel', :href => nil, :id => 'cancel_edit_user_link', :style => "display:none;" do |page|
-      - page[:user_show].visual_effect :blind_down, :duration => 0.5
-      - page[:update_user].visual_effect :blind_up, :duration => 0.5
-      - page[:cancel_edit_user_link].hide
-      - page[:edit_user_link].visual_effect :appear
+  = link_to_function 'Cancel', :href => nil, :id => 'cancel_edit_user_link', :style => "display:none;" do |page|
+    - page[:user_show].visual_effect :blind_down, :duration => 0.5
+    - page[:update_user].visual_effect :blind_up, :duration => 0.5
+    - page[:cancel_edit_user_link].hide
+    - page[:edit_user_link].visual_effect :appear
+
+  |
+
+= link_to 'All users', root_path
+- if @user.company
+  |
+  = link_to @user.company.name, @user.company

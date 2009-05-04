@@ -1,20 +1,23 @@
-%h1
-  All users
-  = text_field_tag :search
-  = observe_field :search, :url => { :action => :search }, :frequency => 0.25, :update => :search_results, :with => 'name'
+%h1 Welcome to Addressbook
 
-= link_to_function 'New user', :href => new_user_path, :id => 'new_user_link' do |page|
-  - page[:create_user].visual_effect :blind_down, :duration => 0.5
-  - page[:new_user_link].hide
-  - page[:cancel_new_user_link].visual_effect :appear
+= render :partial => 'search', :locals => {:company => true}
 
-= link_to_function 'Cancel', :href => nil, :id => 'cancel_new_user_link', :style => "display:none;" do |page|
-  - page[:create_user].visual_effect :blind_up, :duration => 0.5
-  - page[:cancel_new_user_link].hide
-  - page[:new_user_link].visual_effect :appear
+- if admin?
+  = link_to_function 'New user', :href => new_user_path, :id => 'new_user_link' do |page|
+    - page[:create_user].visual_effect :blind_down, :duration => 0.5
+    - page[:new_user_link].hide
+    - page[:cancel_new_user_link].visual_effect :appear
 
-#create_user{:style => 'display:none;'}
-  = render :partial => 'form', :locals => {:user => User.new }
+  = link_to_function 'Cancel', :href => nil, :id => 'cancel_new_user_link', :style => "display:none;" do |page|
+    - page[:create_user].visual_effect :blind_up, :duration => 0.5
+    - page[:cancel_new_user_link].hide
+    - page[:new_user_link].visual_effect :appear
+
+  #create_user{:style => 'display:none;'}
+    = render :partial => 'form', :locals => {:user => User.new }
+  %br
+
+%br
 
 #search_results
   = render :partial => 'users/list', :locals => {:users => @users, :show_company => true}

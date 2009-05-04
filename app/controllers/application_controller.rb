@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   private
   def authorization_failed!
     flash[:error] = "You have no permission to perform this action"
-    redirect_to(account_path)
+    redirect_to(root_path)
   end
 
   def logged_in?

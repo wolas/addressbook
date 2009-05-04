@@ -1,31 +1,36 @@
-%h1 Listing companies
+%h1 All companies
 
-= link_to_function 'New company', :href => new_company_path, :id => 'new_company_link' do |page|
-  - page[:create_company].visual_effect :blind_down, :duration => 0.5
-  - page[:new_company_link].hide
-  - page[:cancel_new_company_link].visual_effect :appear
+- if admin?
+  = link_to_function 'New company', :href => new_company_path, :id => 'new_company_link' do |page|
+    - page[:create_company].visual_effect :blind_down, :duration => 0.5
+    - page[:new_company_link].hide
+    - page[:cancel_new_company_link].visual_effect :appear
 
-= link_to_function 'Cancel', :href => new_company_path, :id => 'cancel_new_company_link', :style => "display:none;" do |page|
-  - page[:create_company].visual_effect :blind_up, :duration => 0.5
-  - page[:cancel_new_company_link].hide
-  - page[:new_company_link].visual_effect :appear
+  = link_to_function 'Cancel', :href => new_company_path, :id => 'cancel_new_company_link', :style => "display:none;" do |page|
+    - page[:create_company].visual_effect :blind_up, :duration => 0.5
+    - page[:cancel_new_company_link].hide
+    - page[:new_company_link].visual_effect :appear
 
-#create_company{:style => 'display:none;'}
-  = render :partial => 'form', :locals => {:company => Company.new }
+  #create_company{:style => 'display:none;'}
+    = render :partial => 'form', :locals => {:company => Company.new }
+  %br
+  %br
 
-%table{:width => "100%"}
-  %tr
-    %th Name
-    %th City
-    %th Street
-
-  -for company in @companies
+.ui-widget-content.widget
+  %table{:width => "50%"}
     %tr
-      %td= h company.name
-      %td= h company.city
-      %td= h company.street
+      %th Name
+      %th City
+      %th Street
+      %th Users
 
-    
-      %td= link_to 'Show', company_path(company)
-      %td= link_to 'Edit', edit_company_path(company)
-      %td= link_to 'Destroy', company_path(company), :method => :delete
+    -for company in @companies
+      %tr
+        %td= link_to h(company.name), company
+        %td= h company.city
+        %td= h company.street
+        %td= company.users.count
+
+        - if admin?
+          %td= link_to 'Edit', edit_company_path(company)
+          %td= link_to 'Destroy', company_path(company), :method => :delete

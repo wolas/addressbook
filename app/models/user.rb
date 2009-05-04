@@ -3,9 +3,15 @@ class User < ActiveRecord::Base
 
   belongs_to :company
 
-  validates_presence_of :company
+  validates_presence_of :name, :surname, :phone, :email
 
   before_save :downcase_name
+
+  def generate_password
+    pass = ('a'..'z').to_a.sort_by{ rand }.to_s
+    self.password = pass
+    self.password_confirmation = pass
+  end
 
   def downcase_name
     self.login = login.downcase
