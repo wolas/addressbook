@@ -1,8 +1,13 @@
 %h1
   = @company.name
 
-- unless @company.users.empty?
+- if @company.users.empty?
 
+  No users in
+  = @company.name
+  at this moment.
+
+- else
   = render :partial => 'users/search'
 
   #search_results

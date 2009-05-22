@@ -1,0 +1,47 @@
+%h1 File Upload and Download
+
+
+.two_col
+  %h2 Upload
+  .ui-widget-content.widget
+    - form_tag '/files/upload', :multipart => true do
+      .attribute
+        .name File
+        .value= file_field_tag :file
+      .attribute
+        .name Dry run
+        .value= check_box_tag :dry, true, :checked => true
+
+      = submit_tag 'upload'
+
+    - if @invalid_users and !@invalid_users.empty?
+      %h3 Invalid Users
+
+      %table{:style => 'width: 100%;'}
+        - for user in @invalid_users
+          %tr
+            %td
+              = user.surname
+              ,
+              = user.name
+            %td.ui-state-error.widget
+              - user.errors.each_full do |msg|
+                = msg
+                %br
+
+
+    - if @valid_users and !@valid_users.empty?
+      %h3 Valid Users
+      %table
+        - for user in @valid_users
+          %tr
+            %td
+              = user.surname
+              ,
+              = user.name
+            %td
+              = user.phone
+
+
+.two_col
+  %h2 Download

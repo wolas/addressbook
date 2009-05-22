@@ -4,9 +4,8 @@ class RolesController < ApplicationController
   def search
     params[:company] ||= "All"
     users = params[:company].eql?("All") ? User : Company.find(params[:company]).users
-    users = users.all :conditions => ["login LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
-    #raise users.size.to_s
-    render( users.empty? ? {:text => "No Users found!"} : {:partial => 'list', :locals => {:users => users}})
+    users = users.all :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
+    render( users.empty? ? {:text => "No Users found!"} : {:partial => 'roles/list', :locals => {:users => users}})
   end
 
   def index

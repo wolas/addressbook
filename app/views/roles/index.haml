@@ -2,6 +2,5 @@
 
 = render :partial => 'users/search', :locals => {:company => true}
 
-.ui-widget-content.widget
-  #search_results
-    = render :partial => 'list', :locals => {:users => @users}
+#search_results.ui-widget-content.widget
+  = render :partial => 'list', :locals => {:users => @users}

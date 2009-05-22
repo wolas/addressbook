@@ -5,10 +5,13 @@
 #user_show
   .attribute
     .name Name
-    .value= @user.login.capitalize
+    .value= @user.name.capitalize
   .attribute
     .name Surname
     .value= @user.surname.capitalize
+  .attribute
+    .name Login
+    .value= @user.login
   .attribute
     .name Phone
     .value= @user.phone
@@ -28,7 +31,9 @@
         %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
         %a{:href=>"skype:#{@user.skype}?chat"}
           %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
-
+  .attribute
+    .name Admin?
+    .value= @user.admin? ? 'yes' : 'no'
 %br
 - if admin?
   #update_user{:style => 'display:none;'}

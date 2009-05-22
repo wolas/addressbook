@@ -3,9 +3,18 @@ class User < ActiveRecord::Base
 
   belongs_to :company
 
-  validates_presence_of :name, :surname, :phone, :email
+  validates_presence_of :name, :surname, :phone, :name
 
-  before_save :downcase_name
+  before_save :downcase_name, :unique_name
+
+  def unique_name
+    errors.add(:name, 'must be unique') if User.first(:conditions => {:name => name, :surname => surname})
+  end
+
+  def self.generate_access_code
+    all = ('a'..'z').to_a + ('A'..'Z').to_a
+    all.sort_by{ rand }.to_s
+  end
 
   def generate_password
     pass = ('a'..'z').to_a.sort_by{ rand }.to_s
@@ -16,12 +25,6 @@ class User < ActiveRecord::Base
   def downcase_name
     self.login = login.downcase
     self.surname = surname.downcase
-  end
-
-  def name
-    result = login.capitalize
-    result += " " + surname.capitalize if surname
-    result
   end
 
   def skype?

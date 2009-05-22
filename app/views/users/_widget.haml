@@ -1,6 +1,6 @@
 - surname ||= false
 
-%span{:style => 'vertical-align: middle;'}
-  = gravatar_for(user, :default => "#{root_url}/public/images/face.png")
+%span
+  = image_tag gravatar_url(user.email, :default => "#{root_url}/public/images/face.png"), :width => '35px', :style => 'vertical-align: middle;'
   - link = ' ' + user.surname.to_s.capitalize if surname
-  = link_to h(user.login.capitalize + link.to_s), user
+  = link_to h(user.name.capitalize + link.to_s), user

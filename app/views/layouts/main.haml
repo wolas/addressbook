@@ -12,10 +12,12 @@
   %body
     %br
     #user_badge.ui-widget-content.widget
-      = link_to_unless_current 'home', root_url
+      = link_to_unless_current 'Home', root_url
       |
-      = link_to_unless_current 'companies', companies_url
+      = link_to_unless_current 'Companies', companies_url
       - if admin?
+        %br
+        = link_to_unless_current 'Files', files_path
         |
         = link_to_unless_current 'Roles', roles_path
 
@@ -24,6 +26,8 @@
           = link_to 'Logout', logout_url
         - else
           = link_to_unless_current 'Log in', new_user_session_path
+          |
+          =link_to_unless_current 'change your profile', get_access_users_path
 
 
     .flash
