@@ -1,14 +1,10 @@
-%h1
-  = @company.name
+.two_col{:style => 'width:50%'}
+  %h1= @company.name
 
-- if @company.users.empty?
-
-  No users in
-  = @company.name
-  at this moment.
-
-- else
+.two_col{:style => 'width:50%'}
   = render :partial => 'users/search'
 
-  #search_results
-    = render :partial => 'users/list', :locals => {:users => @company.users}
+.clear
+
+#search_results
+  = render :partial => 'users/list', :locals => {:users => @company.users}

@@ -14,15 +14,12 @@ class FilesController < ApplicationController
       next if name.include? 'Name'
       next if name.include? 'name'
 
-      puts '*******************'
-      puts "#{name}, #{surname}, #{email}, #{phone}, #{fax}, #{mobile}"
-
       user = User.new(:name => name, :surname => surname, :phone => phone, :mobile => mobile, :email => email)
       user.generate_password
       user.login = "#{name} #{surname}".gsub("'", "")
       user.email = "email_of_#{name}_#{surname}@test.com" unless email
 
-      if user.save
+      if params[:dry_run] ? user.valid? : user.save
         @valid_users << user
       else
         @invalid_users << user

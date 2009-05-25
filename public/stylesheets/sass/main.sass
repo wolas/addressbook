@@ -19,32 +19,72 @@ body
     :right 40px
     :left 40px
 
-.footer
-  :height 40px
-  :text-align center
-  :border-top 1px solid #333
-  :padding
-    :top 9px
+#logo
+  :position absolute
+  :top 10px
+  :left 40px
+
+#header
+  :margin
+    :top 30px
+    :left 80px
+
+  :text-align right
+  :height 23px
+  :background #000 url(/images/header_bg.png) repeat-x scroll top left
+  :padding-top 4px
+  :color #fff
+
+
+  #title
+    :position absolute
+    :left 130px
+    :top 15px
+
+  a
+    :color #fff
+    :text-transform uppercase
+    :padding
+      :right 2px
+      :left 2px
+  a:hover
+    :text-decoration none
+    :font-weight bold
+
+
 
 #content
   :margin
     :top 20px
 a
-  :color orange
+  :color #000
   :text-decoration none
 
 a:hover
   :text-decoration underline
 
 th
+  :background #000 url(/images/header_bg_blue.png) repeat-x scroll top left
+  :border 2px solid #cccccc
+  :height 27px
+  :padding-left 5px
   :font-size 1.1em
   :text-align left
+  :color #fff
 
 h1
-  :padding-bottom 15px
+  :padding
+    :left 80px
+  :color #666666
 
-.flash
-  :width 70%
+#flash
+  :float right
+  :width 50%
+  :padding-left 80px
+  :margin-top 15px
+
+  .flash_controls
+    :float right
 
 .clear
   :height 1px
@@ -53,21 +93,6 @@ h1
 .two_col
   :width 45%
   :float left
-
-#user_badge
-  :float right
-  :text-align center
-  :width 170px
-
-
-#menu
-  :float left
-  :display inline
-  :font
-    :size 1.5em
-    :color #333333
-  :padding
-    :top 15px
 
 .widget
   :padding
@@ -97,6 +122,13 @@ h1
 
 .fieldWithErrors
   :color red
+
+.even_row
+  :background #e9e9e9 url(/images/table_bg.png) repeat-x scroll top left
+
+#search_form
+  :float right
+  :padding-top 25px
 
 
 #errorExplanation

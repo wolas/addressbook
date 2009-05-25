@@ -1,11 +1,12 @@
-- company ||= false
+#search_form
+  - company ||= false
 
-- form_tag '/search', :id => :search, :onsubmit => "return false;"  do
-  .attribute
-    .name Search
-    .value
-      = text_field_tag :name
-      = select_tag :company, "<option>All</option>" + options_from_collection_for_select(Company.all, 'id', 'name'), :include_blank => true if company
+  - form_tag '/search', :id => :search, :onsubmit => "return false;"  do
+    .attribute
+      .name Ricerca
+      .value= text_field_tag :name
+      &nbsp;
+      .value= select_tag :company, "<option>All</option>" + options_from_collection_for_select(Company.all, 'id', 'name'), :include_blank => true if company
 
-= observe_form :search, :url => { :action => :search }, :frequency => 0.25, :update => :search_results
-%br
+  = observe_form :search, :url => { :action => :search }, :frequency => 0.25, :update => :search_results
+  %br

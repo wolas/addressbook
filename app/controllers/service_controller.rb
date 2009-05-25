@@ -4,10 +4,25 @@ class ServiceController < ApplicationController
 
   def edit
     @user = User.find_by_access_code params[:access_code]
+
+    unless @user
+      flash[:error] = 'Your access code has expired or has already been used. Retry the process please.'
+      redirect_to :action => :index
+    end
   end
 
   def update
+    @user = User.find(params[:id])
 
+    if @user.update_attributes(params[:user])
+
+      @user.update_attributes :access_code => nil
+
+      flash[:notice] = "Your account was updated succesfully!"
+      redirect_to root_url
+    else
+      render :action => :edit
+    end
   end
 
   def send_access
@@ -15,17 +30,14 @@ class ServiceController < ApplicationController
     if user
       user.update_attributes :access_code => User.generate_access_code
       Notifier.deliver_send_access(user)
-      flash[:notice] = "An email has been sent to #{params[:email]}"
+      redirect_to :action => :thank_you
     else
       flash[:error] = "No user with email #{params[:email]}"
+      redirect_to :action => :index
     end
-
-    redirect_to :action => :index
   end
 
-  def external_edit
-    @user = User.find_by_access_code params[:access_code]
-    render :action => :edit
-  end
+  def thank_you
 
+  end
 end

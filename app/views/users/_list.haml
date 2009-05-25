@@ -1,6 +1,6 @@
 - show_company ||= false
 
-%table{:width => "100%"}
+%table{:style => "width:100%; border: 1px solid #cccccc;"}
   %tr
     %th User
     %th Phone
@@ -9,13 +9,16 @@
     %th Skype
     - if show_company
       %th Company
+    - if admin?
+      %th &nbsp;
+      %th &nbsp;
 
-  - users.each do |user|
-    %tr
-      %td{:style => "min-width:100px;"}= widget_for user, true
+  - users.each_with_index do |user, index|
+    %tr{:class => index.even? ? 'even_row' : 'odd_row'}
+      %td{:style => "min-width:100px;text-transform:uppercase;"}= widget_for user, true
       %td= user.phone
       %td= user.mobile
-      %td= mail_to user.email
+      %td{:style => "text-transform:lowercase;"}= mail_to user.email
       %td
         - if user.skype?
           %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
@@ -24,3 +27,6 @@
 
       - if show_company
         %td= link_to user.company.name, user.company if user.company
+      - if admin?
+        %td= link_to 'edit', edit_user_path(user)
+        %td= link_to 'destroy', user, :method => :delete, :confirm => 'Are you sure you wan to delete this user?'

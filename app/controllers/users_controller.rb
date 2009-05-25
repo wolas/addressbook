@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_admin, :only => [:new, :create, :edit, :update]
+  before_filter :require_admin, :only => [:new, :create, :edit, :update, :destroy]
 
   def search
     params[:company] ||= "All"
@@ -49,5 +49,11 @@ class UsersController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:notice] = 'User was succesfully deleted.'
+    redirect_to root_url
   end
 end
