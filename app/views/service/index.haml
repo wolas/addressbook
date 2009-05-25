@@ -1,0 +1,11 @@
+%h1 Put your email to get access
+
+- form_tag '/service/send_access' do
+
+  .two_col
+    .ui-widget-content.widget
+      .attribute
+        .name Email
+        .value= text_field_tag :email
+
+      = submit_tag 'send'

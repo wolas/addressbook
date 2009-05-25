@@ -1,31 +1,16 @@
 class UsersController < ApplicationController
-  before_filter :require_admin, :only => [:new, :create, :edit]
+  before_filter :require_admin, :only => [:new, :create, :edit, :update]
 
   def search
     params[:company] ||= "All"
     users = params[:company].eql?("All") ? User : Company.find(params[:company]).users
-    users = users.all :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
+    users = users.all :order => 'surname ASC', :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
     render( users.empty? ? {:text => "No Users found!"} : {:partial => 'list', :locals => {:users => users}})
   end
 
-  def get_access
-  end
-
-  def send_access
-    user = User.find_by_email(params[:email])
-    if user
-      user.update_attributes :access_code => User.generate_access_code
-      Notifier.deliver_send_access(user)
-      flash[:notice] = "An email has been sent to #{params[:email]}"
-    else
-      flash[:error] = "No user with email #{params[:email]}"
-    end
-
-    redirect_to :action => :get_access
-  end
 
   def index
-    @users = User.all :order => 'login ASC'
+    @users = User.all :order => 'surname ASC'
   end
 
   def new
@@ -49,11 +34,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = @current_user
-  end
-
-  def external_edit
-    @user = User.find_by_access_code params[:access_code]
-    render :action => :edit
   end
 
   def update

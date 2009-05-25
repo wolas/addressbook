@@ -1,0 +1,37 @@
+%h1 Edit your account
+
+.ui-widget-content.widget
+
+  - form_for @user, :url => {:controller => :service, :action => :update, :id => @user} do |f|
+
+    = error_messages_for :user
+
+    .attribute
+      .name Company
+      .value= f.collection_select :company_id, Company.all, :id, :name
+    .attribute
+      .name= f.label :name
+      .value= f.text_field :name
+    .attribute
+      .name= f.label :surname
+      .value= f.text_field :surname
+    .attribute
+      .name= f.label :email
+      .value= f.text_field :email
+    .attribute
+      .name= f.label :skype
+      .value= f.text_field :skype
+    .attribute
+      .name= f.label :phone
+      .value= f.text_field :phone
+    .attribute
+      .name= f.label :mobile
+      .value= f.text_field :mobile
+    .attribute
+      .name= f.label :fax
+      .value= f.text_field :fax
+
+    = f.submit user.new_record? ? "Register" : "Save"
+
+%br
+= link_to "Cancel", @user

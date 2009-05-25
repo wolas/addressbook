@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :companies, :has_many => [:users]
-  map.resources :users, :collection => {:get_access => :get}, :member => {:external_edit => :get}
+  map.resources :users
   map.resources :roles
   map.resources :files
+  map.resources :service, :collection => {:get_access => :get}, :member => {:external_edit => :get}
 
   map.resource :user_session
 

@@ -3,12 +3,16 @@ class User < ActiveRecord::Base
 
   belongs_to :company
 
-  validates_presence_of :name, :surname, :phone, :name
+  validates_presence_of :name, :surname, :name
 
   before_save :downcase_name, :unique_name
 
   def unique_name
     errors.add(:name, 'must be unique') if User.first(:conditions => {:name => name, :surname => surname})
+  end
+
+  def full_name
+    "#{surname}, #{name}"
   end
 
   def self.generate_access_code
