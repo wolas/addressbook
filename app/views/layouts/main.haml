@@ -17,8 +17,6 @@
     #header
       #title= link_to image_tag('title.png'), root_url
 
-      = link_to 'Home', root_url
-      |
       = link_to 'Companies', companies_url
       |
 
@@ -49,7 +47,7 @@
             %span{:class => "ui-icon ui-icon-info", :style => "float: left; margin-right: 0.3em;"}
             = notice
 
-      - if error = 'caca'
+      - if error = flash[:error]
         .ui-state-error.widget
           .flash_controls
             = link_to_function 'x' do |page|
