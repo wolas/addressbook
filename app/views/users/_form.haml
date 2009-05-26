@@ -1,49 +1,47 @@
-.ui-widget-content.widget
+- form_for user, :url => user do |f|
 
-  - form_for user, :url => user do |f|
+  = error_messages_for :user
 
-    = error_messages_for :user
+  - if admin?
+    .attribute
+      .name= f.label :admin
+      .value
+        = f.check_box :admin, :onchange => update_page { |page| page.toggle :password }
 
-    - if admin?
+    #password{:style => user.admin? ? '' : 'display: none;'}
       .attribute
-        .name= f.label :admin
-        .value
-          = f.check_box :admin, :onchange => update_page { |page| page.toggle :password }
+        .name= f.label :login
+        .value= f.text_field :login
+      .attribute
+        .name= f.label :password, user.new_record? ? nil : "Change password"
+        .value= f.password_field :password
+      .attribute
+        .name= f.label :password_confirmation, "Confirm password"
+        .value= f.password_field :password_confirmation
 
-      #password{:style => user.admin? ? '' : 'display: none;'}
-        .attribute
-          .name= f.label :login
-          .value= f.text_field :login
-        .attribute
-          .name= f.label :password, user.new_record? ? nil : "Change password"
-          .value= f.password_field :password
-        .attribute
-          .name= f.label :password_confirmation, "Confirm password"
-          .value= f.password_field :password_confirmation
+  .attribute
+    .name Company
+    .value= f.collection_select :company_id, Company.all, :id, :name
+  .attribute
+    .name= f.label :name
+    .value= f.text_field :name
+  .attribute
+    .name= f.label :surname
+    .value= f.text_field :surname
+  .attribute
+    .name= f.label :email
+    .value= f.text_field :email
+  .attribute
+    .name= f.label :skype
+    .value= f.text_field :skype
+  .attribute
+    .name= f.label :phone
+    .value= f.text_field :phone
+  .attribute
+    .name= f.label :mobile
+    .value= f.text_field :mobile
+  .attribute
+    .name= f.label :fax
+    .value= f.text_field :fax
 
-    .attribute
-      .name Company
-      .value= f.collection_select :company_id, Company.all, :id, :name
-    .attribute
-      .name= f.label :name
-      .value= f.text_field :name
-    .attribute
-      .name= f.label :surname
-      .value= f.text_field :surname
-    .attribute
-      .name= f.label :email
-      .value= f.text_field :email
-    .attribute
-      .name= f.label :skype
-      .value= f.text_field :skype
-    .attribute
-      .name= f.label :phone
-      .value= f.text_field :phone
-    .attribute
-      .name= f.label :mobile
-      .value= f.text_field :mobile
-    .attribute
-      .name= f.label :fax
-      .value= f.text_field :fax
-
-    = f.submit user.new_record? ? "Register" : "Save"
+  = f.submit user.new_record? ? "Register" : "Save"

@@ -30,11 +30,8 @@ body {
     text-decoration: none;
     font-weight: bold; }
 
-#content {
-  margin-top: 20px; }
-
 a {
-  color: #000;
+  color: orange;
   text-decoration: none; }
 
 a:hover {
@@ -82,18 +79,6 @@ h4 {
   width: 45%;
   float: left; }
 
-.widget {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px; }
-
-.middle {
-  vertical-align: middle; }
-
 .attribute {
   display: table-row; }
   .attribute .name {
@@ -126,14 +111,7 @@ h4 {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px; }
   #errorExplanation h2 {
-    display: none;
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    background-color: #c00;
-    color: #fff; }
+    display: none; }
   #errorExplanation p {
     color: #333;
     margin-bottom: 0;
