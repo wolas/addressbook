@@ -19,6 +19,8 @@
 
       = link_to 'Companies', companies_url
       |
+      = link_to 'Download', show_download_files_url
+      |
 
       - if logged_in?
         = link_to 'Logout', logout_url
@@ -30,9 +32,9 @@
           = link_to 'Roles', roles_path
 
       - else
-        = link_to 'Log in', new_user_session_path
-        |
         =link_to 'change your profile', service_index_path
+        |
+        = link_to 'Log in', new_user_session_path
 
 
 

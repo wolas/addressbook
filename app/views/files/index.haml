@@ -22,19 +22,7 @@
 
 .two_col{:style => 'width:50%;'}
   %h2 Download
-
-  %p
-    You can download all users
-    = link_to 'here', download_files_path
-
-  or
-
-  %p
-    you can download only one company
-
-    - form_tag download_files_path do
-      = collection_select :company, :id, Company.all, :id, :name
-      = submit_tag 'download'
+  = render :partial => 'download'
 
 - if @invalid_users and !@invalid_users.empty?
   %h3 Invalid Users

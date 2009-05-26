@@ -1,6 +1,8 @@
 class FilesController < ApplicationController
   require 'fastercsv'
 
+  before_filter :require_admin, :except => [:download, :show_download]
+
   def index
 
   end
@@ -35,6 +37,9 @@ class FilesController < ApplicationController
     render :action => :index
   end
 
+  def show_download
+
+  end
 
   def download
     file = FasterCSV.generate_line User::CSV_ORDER
