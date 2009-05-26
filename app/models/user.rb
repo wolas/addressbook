@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  CSV_ORDER = [:surname, :name, :phone, :mobile, :fax, :email]
+
   acts_as_authentic
 
   belongs_to :company

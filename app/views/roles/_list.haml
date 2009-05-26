@@ -1,6 +1,13 @@
-- for user in users
-  - form_tag :action => :update_roles, :id => user do
-    .attribute
-      .value= check_box_tag 'admin', true, user.admin?, :id => "check_box_#{user.id}"
-      .value{:width => '300px'}= widget_for user, true
-      = observe_field "check_box_#{user.id}", :url => { :action => :update_roles }, :frequency => 0.25, :with => "'admin=' + value + '&' + 'id=#{user.id}'"
+%table{:style => "width:100%; border: 1px solid #cccccc;"}
+
+  %th Admin
+  %th &nbsp;
+
+  - users.each_with_index do |user, index|
+    %tr{:class => index.even? ? 'even_row' : 'odd_row'}
+      %td{:style => 'width:30px; text-align: center;'}
+        - form_tag :action => :update_roles, :id => user do
+          = check_box_tag 'admin', true, user.admin?, :id => "check_box_#{user.id}"
+        = observe_field "check_box_#{user.id}", :url => { :action => :update_roles }, :frequency => 0.25, :with => "'admin=' + value + '&' + 'id=#{user.id}'"
+
+      %td= widget_for user, true

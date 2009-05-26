@@ -1,6 +1,10 @@
-%h1 Admins
+.two_col{:style => 'width:50%'}
+  %h1 Admins
 
-= render :partial => 'users/search', :locals => {:company => true}
+.two_col{:style => 'width:50%'}
+  = render :partial => 'users/search', :locals => {:company => true}
 
-#search_results.ui-widget-content.widget
+.clear
+
+#search_results
   = render :partial => 'list', :locals => {:users => @users}

@@ -1,47 +1,83 @@
 %h1 File Upload and Download
 
-
-.two_col
+.two_col{:style => 'width:50%;'}
   %h2 Upload
-  .ui-widget-content.widget
-    - form_tag '/files/upload', :multipart => true do
-      .attribute
-        .name File
-        .value= file_field_tag :file
-      .attribute
-        .value= check_box_tag :dry, true, :checked => true
-        .name Dry run
+  - form_tag '/files/upload', :multipart => true do
+    .attribute
+      .name File
+      .value= file_field_tag :file
 
-      = submit_tag 'upload'
+    .attribute
+      .name Company
+      .value= collection_select :user, :company, Company.all, :id, :name
 
-    - if @invalid_users and !@invalid_users.empty?
-      %h3 Invalid Users
+    .attribute
+      .value= check_box_tag :dry, true, :checked => true
+      .name
+        Dry run
+        %span{:style => 'font-size: 0.7em;font-weight: normal;'}
+          (When checked, no database transactions will occur.)
+    %br
+    = submit_tag 'upload'
 
-      %table{:style => 'width: 100%;'}
-        - for user in @invalid_users
-          %tr
-            %td
-              = user.surname
-              ,
-              = user.name
-            %td.ui-state-error.widget
-              - user.errors.each_full do |msg|
-                = msg
-                %br
-
-
-    - if @valid_users and !@valid_users.empty?
-      %h3 Valid Users
-      %table
-        - for user in @valid_users
-          %tr
-            %td
-              = user.surname
-              ,
-              = user.name
-            %td
-              = user.phone
-
-
-.two_col
+.two_col{:style => 'width:50%;'}
   %h2 Download
+
+  %p
+    You can download all users
+    = link_to 'here', download_files_path
+
+  or
+
+  %p
+    you can download only one company
+
+    - form_tag download_files_path do
+      = collection_select :company, :id, Company.all, :id, :name
+      = submit_tag 'download'
+
+- if @invalid_users and !@invalid_users.empty?
+  %h3 Invalid Users
+
+  %table{:style => 'width: 100%;'}
+    %tr
+      %th Name
+      %th Email
+      %th Errors
+
+    - @invalid_users.each_with_index do |user, index|
+      %tr{:class => index.even? ? 'even_row' : 'odd_row'}
+        %td= user.full_name
+        %td= user.email
+
+        %td.ui-state-error.widget
+          - user.errors.each_full do |msg|
+            = msg
+            %br
+
+
+- if @valid_users and !@valid_users.empty?
+  %h3 Valid Users
+
+  %table{:style => "width:100%; border: 1px solid #cccccc;"}
+    %tr
+      %th User
+      %th Phone
+      %th Mobile
+      %th Email
+      %th Skype
+      %th Company
+
+    - @valid_users.each_with_index do |user, index|
+      %tr{:class => index.even? ? 'even_row' : 'odd_row'}
+        %td{:style => "min-width:100px;text-transform:uppercase;"}= widget_for user, true
+        %td= user.phone
+        %td= user.mobile
+        %td{:style => "text-transform:lowercase;"}= user.email
+        %td
+          - if user.skype?
+            %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
+            %a{:href=>"skype:#{user.skype}?chat"}
+              %img{:src=>"http://mystatus.skype.com/smallclassic/#{user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
+
+        %td= link_to user.company.name, user.company if user.company
