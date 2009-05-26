@@ -2,7 +2,7 @@
   %h1= @company.name
 
 .two_col{:style => 'width:50%'}
-  = render :partial => 'users/search'
+  = render :partial => 'users/search', :locals => {:company => @company}
 
 .clear
 

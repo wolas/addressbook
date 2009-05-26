@@ -1,11 +1,6 @@
 class CompaniesController < ApplicationController
   before_filter :require_admin, :except => [:show, :search, :index]
 
-  def search
-    users = Company.find(params[:company]).users.all :conditions => ["login LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
-    render :partial => 'users/list', :locals => {:users => users}
-  end
-
   # GET /companies
   def index
     @companies = Company.find(:all)

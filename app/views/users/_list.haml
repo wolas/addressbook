@@ -9,9 +9,6 @@
     %th Skype
     - if show_company
       %th Company
-    - if admin?
-      %th &nbsp;
-      %th &nbsp;
 
   - users.each_with_index do |user, index|
     %tr{:class => index.even? ? 'even_row' : 'odd_row'}
@@ -28,5 +25,7 @@
       - if show_company
         %td= link_to user.company.name, user.company if user.company
       - if admin?
-        %td= link_to 'edit', edit_user_path(user)
-        %td= link_to 'destroy', user, :method => :delete, :confirm => 'Are you sure you wan to delete this user?'
+        %td
+          = link_to 'edit', edit_user_path(user)
+          |
+          = link_to 'destroy', user, :method => :delete, :confirm => 'Are you sure you wan to delete this user?'

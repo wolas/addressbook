@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     params[:company] ||= "All"
     users = params[:company].eql?("All") ? User : Company.find(params[:company]).users
     users = users.all :order => 'surname ASC', :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
-    render( users.empty? ? {:text => "No Users found!"} : {:partial => 'list', :locals => {:users => users}})
+    render( users.empty? ? {:text => "No Users found!"} : {:partial => 'list', :locals => {:users => users, :show_company => params[:company].eql?('All')}})
   end
 
 
