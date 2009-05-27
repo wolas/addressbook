@@ -29,7 +29,7 @@
     %th Users
 
   - @companies.each_with_index do |company, index|
-    %tr{:class => index.even? ? 'even_row' : 'odd_row'}
+    %tr{:class => index.odd? ? 'even_row' : 'odd_row'}
       %td= link_to h(company.name), company
       %td= h company.city
       %td= h company.street

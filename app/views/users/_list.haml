@@ -11,7 +11,7 @@
       %th Company
 
   - users.each_with_index do |user, index|
-    %tr{:class => index.even? ? 'even_row' : 'odd_row'}
+    %tr{:class => index.odd? ? 'even_row' : 'odd_row'}
       %td.name_cell
         %span
           = image_tag 'face.png', :style => 'vertical-align: middle;'
