@@ -18,13 +18,9 @@ class FilesController < ApplicationController
 
     FasterCSV.foreach(params[:file].path, :skip_blanks => true) do |name, surname, phone, mobile, fax, email|
       next if name.nil?
-      next if name.include? 'Name'
-      next if name.include? 'name'
+      next if name.include?('Name') or name.include?('name')
 
       user = User.new(:company_id => params[:user][:company], :name => name, :surname => surname, :phone => phone, :mobile => mobile, :email => email)
-      user.generate_password
-      user.login = "#{name} #{surname}".gsub("'", "")
-      user.email = "email_of_#{name}_#{surname}@test.com" unless email
 
       if params[:dry] ? user.valid? : user.save
         @valid_users << user

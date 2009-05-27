@@ -9,15 +9,15 @@
 
       %td{:style => 'width: 40px; text-align: center;'}
         - if user.admin?
-          = link_to image_tag('cross.png', :style => 'border:none;'), user.admin, :method => :delete, :confirm => "Are you sure you want to delete #{user.name} privileges?"
+          = link_to image_tag('cross.png'), user.admin, :method => :delete, :confirm => "Are you sure you want to delete #{user.name} privileges?"
 
         - else
-          = link_to_function image_tag('tick.png', :style => 'border:none;'), :href => nil, :id => "show_admin_form_#{user.id}_link" do |page|
+          = link_to_function image_tag('tick.png'), :href => nil, :id => "show_admin_form_#{user.id}_link" do |page|
             - page[:"admin_form_#{user.id}"].visual_effect :blind_down, :duration => 0.5
             - page[:"show_admin_form_#{user.id}_link"].hide
             - page[:"hide_admin_form_#{user.id}_link"].visual_effect :appear
 
-          = link_to_function image_tag('cross.png', :style => 'border:none;'), :href => nil, :id => "hide_admin_form_#{user.id}_link", :style => "display:none;" do |page|
+          = link_to_function image_tag('cross.png'), :href => nil, :id => "hide_admin_form_#{user.id}_link", :style => "display:none;" do |page|
             - page[:"admin_form_#{user.id}"].visual_effect :blind_up, :duration => 0.5
             - page[:"hide_admin_form_#{user.id}_link"].hide
             - page[:"show_admin_form_#{user.id}_link"].visual_effect :appear

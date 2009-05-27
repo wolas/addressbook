@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
 
   # GET /admins
   def index
-    @users = User.all
+    @users = User.all :include => :admin
   end
 
   # GET /admins/1
