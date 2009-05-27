@@ -30,7 +30,7 @@
           - if user.admin?
             .attribute
               .name Login:
-              .value= user.login
+              .value= user.admin.login
           - else
             %div{:id => "admin_form_#{user.id}", :style => 'display:none;'}
               = render :partial => 'form', :locals => {:admin => Admin.new(:user => user)}

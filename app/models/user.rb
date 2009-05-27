@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def downcase_all
+    self.name = name.downcase
     self.surname = surname.downcase
     self.email = email.downcase
   end
