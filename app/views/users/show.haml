@@ -29,8 +29,8 @@
         %a{:href=>"skype:#{@user.skype}?chat"}
           %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
   .attribute
-    .name Admin?
-    .value= @user.admin? ? 'yes' : 'no'
+    .name Company
+    .value= @user.company ? link_to(@user.company.name, @user.company) : 'none'
 %br
 - if admin?
   #update_user{:style => 'display:none;'}
@@ -47,10 +47,3 @@
     - page[:update_user].visual_effect :blind_up, :duration => 0.5
     - page[:cancel_edit_user_link].hide
     - page[:edit_user_link].visual_effect :appear
-
-  |
-
-= link_to 'All users', root_path
-- if @user.company
-  |
-  = link_to @user.company.name, @user.company
