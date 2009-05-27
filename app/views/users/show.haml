@@ -1,5 +1,5 @@
 %h1
-  = @user.login.capitalize
+  = @user.full_name.capitalize
   account.
 
 #user_show
@@ -9,9 +9,6 @@
   .attribute
     .name Surname
     .value= @user.surname.capitalize
-  .attribute
-    .name Login
-    .value= @user.login
   .attribute
     .name Phone
     .value= @user.phone
