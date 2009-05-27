@@ -1,20 +1,21 @@
 class User < ActiveRecord::Base
   CSV_ORDER = [:surname, :name, :phone, :mobile, :fax, :email]
-
-  acts_as_authentic
+  ATTS = "name, surname, id, phone, mobile, fax, email, skype, company_id"
 
   belongs_to :company
+  has_one :admin
 
-  validates_presence_of :name, :surname, :name
+  validates_presence_of :name, :surname, :email
+  validates_uniqueness_of :email
 
-  before_save :downcase_name, :unique_name
-
-  def unique_name
-    errors.add(:name, 'must be unique') if User.first(:conditions => {:name => name, :surname => surname})
-  end
+  before_save :downcase_all
 
   def full_name
     "#{surname}, #{name}"
+  end
+
+  def admin?
+    not admin.nil?
   end
 
   def self.generate_access_code
@@ -28,9 +29,9 @@ class User < ActiveRecord::Base
     self.password_confirmation = pass
   end
 
-  def downcase_name
-    self.login = login.downcase
+  def downcase_all
     self.surname = surname.downcase
+    self.email = email.downcase
   end
 
   def skype?

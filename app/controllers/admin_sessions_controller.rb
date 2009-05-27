@@ -1,14 +1,14 @@
-class UserSessionsController < ApplicationController
+class AdminSessionsController < ApplicationController
   before_filter :require_user, :only => :destroy
 
 
   def new
-    @user_session = UserSession.new
+    @admin_session = AdminSession.new
   end
 
   def create
-    @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
+    @admin_session = AdminSession.new(params[:admin_session])
+    if @admin_session.save
       flash[:notice] = "Login successful!"
       redirect_back_or_default root_url
     else
@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    current_user_session.destroy
+    current_admin_session.destroy
     flash[:notice] = "Logout successful!"
     redirect_back_or_default root_url
   end

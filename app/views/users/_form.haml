@@ -2,23 +2,6 @@
 
   = error_messages_for :user
 
-  - if admin?
-    .attribute
-      .name= f.label :admin
-      .value
-        = f.check_box :admin, :onchange => update_page { |page| page.toggle :password }
-
-    #password{:style => user.admin? ? '' : 'display: none;'}
-      .attribute
-        .name= f.label :login
-        .value= f.text_field :login
-      .attribute
-        .name= f.label :password, user.new_record? ? nil : "Change password"
-        .value= f.password_field :password
-      .attribute
-        .name= f.label :password_confirmation, "Confirm password"
-        .value= f.password_field :password_confirmation
-
   .attribute
     .name Company
     .value= f.collection_select :company_id, Company.all, :id, :name

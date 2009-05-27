@@ -1,0 +1,17 @@
+.admin_form
+  -form_for admin do |f|
+    = f.error_messages
+
+    .attribute
+      .name= f.label :login
+      .value= f.text_field :login
+    .attribute
+      .name= f.label :password
+      .value= f.password_field :password
+    .attribute
+      .name= f.label :password_confirmation
+      .value= f.password_field :password_confirmation
+
+    = hidden_field_tag 'admin[user_id]', admin.user.id
+
+    .admin_submit_button= f.submit "Save"

@@ -1,0 +1,34 @@
+#admin_show
+  .attribute
+    .name Login:
+    .value=h @admin.login 
+  .attribute
+    .name Password salt:
+    .value=h @admin.password_salt 
+  .attribute
+    .name Crypted password:
+    .value=h @admin.crypted_password 
+  .attribute
+    .name Persistence token:
+    .value=h @admin.persistence_token 
+  .attribute
+    .name User:
+    .value=h @admin.user_id 
+
+#update_admin{:style => 'display:none;'}
+  = render :partial => 'form', :locals => {:admin => @admin }
+
+= link_to_function 'Edit', :href => edit_admin_path(@admin), :id => "edit_admin_link" do |page|
+  - page[:admin_show].visual_effect :blind_up, :duration => 0.5
+  - page[:update_admin].visual_effect :blind_down, :duration => 0.5
+  - page[:edit_admin_link].hide
+  - page[:cancel_edit_admin_link].visual_effect :appear
+
+= link_to_function 'Cancel', :href => edit_admin_path(@admin), :id => 'cancel_edit_admin_link', :style => "display:none;" do |page|
+  - page[:admin_show].visual_effect :blind_down, :duration => 0.5
+  - page[:update_admin].visual_effect :blind_up, :duration => 0.5
+  - page[:cancel_edit_admin_link].hide
+  - page[:edit_admin_link].visual_effect :appear
+
+|
+= link_to 'Back', admins_path

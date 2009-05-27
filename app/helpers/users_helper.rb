@@ -4,6 +4,6 @@ module UsersHelper
   end
 
   def admin?
-    current_user && current_user.admin?
+    current_admin
   end
 end

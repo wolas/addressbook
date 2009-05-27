@@ -4,37 +4,38 @@
     %title
       AddressBook
       - if logged_in?
-        == - #{current_user.name}
+        == - #{current_admin.user(:select => 'name').name}
 
     = stylesheet_link_tag 'jquery', 'main'
     = javascript_include_tag :defaults
+    = javascript_include_tag 'skype'
 
   %body
 
 
-    #logo= image_tag 'logo.png'
+    #logo= link_to image_tag('logo.png'), root_url
 
     #header
       #title= link_to image_tag('title.png'), root_url
 
       = link_to 'Companies', companies_url
       |
-      = link_to 'Download', show_download_files_url
-      |
 
       - if logged_in?
-        = link_to 'Logout', logout_url
-
         - if admin?
-          |
           = link_to 'Files', files_path
           |
-          = link_to 'Roles', roles_path
+          = link_to 'Admins', admins_path
+          |
+
+        = link_to 'Logout', logout_url
 
       - else
+        = link_to 'Download', show_download_files_url
+        |
         =link_to 'change your profile', service_index_path
         |
-        = link_to 'Log in', new_user_session_path
+        = link_to 'Log in', new_admin_session_path
 
 
 

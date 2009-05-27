@@ -1,6 +1,6 @@
 - show_company ||= false
 
-%table{:style => "width:100%; border: 1px solid #cccccc;"}
+%table.users_table
   %tr
     %th User
     %th Phone
@@ -12,18 +12,24 @@
 
   - users.each_with_index do |user, index|
     %tr{:class => index.even? ? 'even_row' : 'odd_row'}
-      %td{:style => "min-width:100px;text-transform:uppercase;"}= widget_for user, true
+      %td.name_cell
+        %span
+          = image_tag 'face.png', :style => 'vertical-align: middle;'
+          = link_to h(user.full_name), user
+
       %td= user.phone
+
       %td= user.mobile
-      %td{:style => "text-transform:lowercase;"}= mail_to user.email
+
+      %td= mail_to user.email
+
       %td
         - if user.skype?
-          %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
-          %a{:href=>"skype:#{user.skype}?chat"}
-            %img{:src=>"http://mystatus.skype.com/smallclassic/#{user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
+          = link_to image_tag("http://mystatus.skype.com/smallclassic/#{user.skype}", :class=>"skype", :alt=>"My status"), "skype:#{user.skype}?chat"
 
       - if show_company
         %td= link_to user.company.name, user.company if user.company
+
       - if admin?
         %td
           = link_to 'edit', edit_user_path(user)

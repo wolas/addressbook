@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   def search
     params[:company] ||= "All"
     users = params[:company].eql?("All") ? User : Company.find(params[:company]).users
-    users = users.all :order => 'surname ASC', :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"]
+    users = users.all :order => 'surname ASC', :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"], :include => :company
     render( users.empty? ? {:text => "No Users found!"} : {:partial => 'list', :locals => {:users => users, :show_company => params[:company].eql?('All')}})
   end
 
 
   def index
-    @users = User.all :order => 'surname ASC'
+    @users = User.all :select => User::ATTS, :order => 'surname ASC', :include => :company
   end
 
   def new
@@ -19,7 +19,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @user.generate_password if params[:user][:admin].eql?('0')
+    if params[:user][:admin].eql?('0')
+      @user.generate_password
+      @user.generate_login
+    end
+
     if @user.save
       flash[:notice] = "Account registered!"
       redirect_back_or_default @user

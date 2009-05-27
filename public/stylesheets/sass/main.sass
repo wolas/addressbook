@@ -32,7 +32,9 @@ body
   :text-align right
   :height 23px
   :background #000 url(/images/header_bg.png) repeat-x scroll top left
-  :padding-top 4px
+  :padding
+    :top 4px
+    :right 20px
   :color #fff
 
 
@@ -44,15 +46,13 @@ body
   a
     :color #fff
     :text-transform uppercase
+    :font-weight bold
     :padding
       :right 2px
       :left 2px
-  a:hover
-    :text-decoration none
-    :font-weight bold
 
 a
-  :color orange
+  :color #008ecf
   :text-decoration none
 
 a:hover
@@ -87,11 +87,11 @@ h4
 #flash
   :float right
   :width 50%
-  :padding-left 80px
   :margin-top 15px
 
   .flash_controls
     :float right
+    :padding-right 10px
 
 .clear
   :height 1px
@@ -119,6 +119,19 @@ h4
 
 .even_row
   :background #e9e9e9 url(/images/table_bg.png) repeat-x scroll top left
+
+.name_cell
+  :min-width 100px
+  :text-transform uppercase
+
+.users_table
+  :width 100%
+  :border 1px solid #cccccc
+
+.skype
+  :border none
+  :width 114px
+  :height 20px
 
 #search_form
   :float right
