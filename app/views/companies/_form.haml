@@ -2,28 +2,28 @@
   = f.error_messages
 
   .attribute
-    .name= f.label :name
+    .name= f.label :name, I18n.t('txt.companies.attributes.name')
     .value= f.text_field :name
   .attribute
-    .name= f.label :city
+    .name= f.label :city, I18n.t('txt.companies.attributes.city')
     .value= f.text_field :city
   .attribute
-    .name= f.label :street
+    .name= f.label :street, I18n.t('txt.companies.attributes.street')
     .value= f.text_field :street
   .attribute
-    .name= f.label :number
+    .name= f.label :number, I18n.t('txt.companies.attributes.number')
     .value= f.text_field :number
   .attribute
-    .name= f.label :postcode, 'post code'
+    .name= f.label :postcode, I18n.t('txt.companies.attributes.postcode')
     .value= f.text_field :postcode
   .attribute
-    .name= f.label :phone
+    .name= f.label :phone, I18n.t('txt.companies.attributes.phone')
     .value= f.text_field :phone
   .attribute
-    .name= f.label :fax
+    .name= f.label :fax, I18n.t('txt.companies.attributes.fax')
     .value= f.text_field :fax
   .attribute
-    .name= f.label :iva
+    .name= f.label :iva, I18n.t('txt.companies.attributes.iva')
     .value= f.text_field :iva
 
-  .company_submit_button= f.submit "Save"
+  .company_submit_button= f.submit I18n.t('txt.save')

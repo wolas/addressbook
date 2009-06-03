@@ -1,3 +1,5 @@
-%h1 Register
+%h1
+  = I18n.t('txt.new')
+  = I18n.t('txt.users.user')
 
 = render :partial => "form", :locals => {:user => @user}

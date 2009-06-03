@@ -2,13 +2,13 @@
 
 %table.users_table
   %tr
-    %th User
-    %th Phone
-    %th Mobile
-    %th Email
-    %th Skype
+    %th= I18n.t('txt.users.attributes.name')
+    %th= I18n.t('txt.users.attributes.phone')
+    %th= I18n.t('txt.users.attributes.mobile')
+    %th= I18n.t('txt.users.attributes.email')
+    %th= I18n.t('txt.users.attributes.skype')
     - if show_company
-      %th Company
+      %th= I18n.t('txt.users.attributes.company')
 
   - users.each_with_index do |user, index|
     %tr{:class => index.odd? ? 'even_row' : 'odd_row'}
@@ -21,15 +21,13 @@
 
       %td= mail_to user.email
 
-      %td
-        - if user.skype?
-          = link_to image_tag("http://mystatus.skype.com/smallclassic/#{user.skype}", :class=>"skype", :alt=>"My status"), "skype:#{user.skype}?chat"
+      %td= link_to image_tag("http://mystatus.skype.com/smallclassic/#{user.skype}", :class=>"skype", :alt=>"My status"), "skype:#{user.skype}?chat" if user.skype?
 
       - if show_company
         %td= link_to user.company.name, user.company if user.company
 
       - if admin?
         %td
-          = link_to 'edit', edit_user_path(user)
+          = link_to I18n.t('txt.edit'), edit_user_path(user)
           |
-          = link_to 'destroy', user, :method => :delete, :confirm => 'Are you sure you wan to delete this user?'
+          = link_to I18n.t('txt.destroy'), user, :method => :delete, :confirm => "#{I18n.t('txt.confirm_delete')} all details for '#{user.full_name}'?"

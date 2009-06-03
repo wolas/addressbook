@@ -9,7 +9,6 @@ class AdminSessionsController < ApplicationController
   def create
     @admin_session = AdminSession.new(params[:admin_session])
     if @admin_session.save
-      flash[:notice] = "Login successful!"
       redirect_back_or_default root_url
     else
       render :action => :new
@@ -18,7 +17,6 @@ class AdminSessionsController < ApplicationController
 
   def destroy
     current_admin_session.destroy
-    flash[:notice] = "Logout successful!"
     redirect_back_or_default root_url
   end
 

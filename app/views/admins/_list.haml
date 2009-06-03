@@ -28,9 +28,26 @@
 
         .two_col
           - if user.admin?
-            .attribute
-              .name Login:
-              .value= user.admin.login
+            %div{:id => "admin_form_#{user.id}", :style => 'display:none;'}
+              = render :partial => 'form', :locals => {:admin => user.admin}
+
+            %div{:id => "admin_show_#{user.id}"}
+              .attribute
+                .name Login:
+                .value= user.admin.login
+
+            = link_to_function I18n.t('txt.edit'), :href => nil, :id => "show_admin_show_#{user.id}_link" do |page|
+              - page[:"admin_form_#{user.id}"].visual_effect :blind_down, :duration => 0.5
+              - page[:"admin_show_#{user.id}"].visual_effect :blind_up, :duration => 0.5
+              - page[:"show_admin_show_#{user.id}_link"].hide
+              - page[:"hide_admin_show_#{user.id}_link"].visual_effect :appear
+
+            = link_to_function I18n.t('txt.cancel'), :href => nil, :id => "hide_admin_show_#{user.id}_link", :style => "display:none;" do |page|
+              - page[:"admin_form_#{user.id}"].visual_effect :blind_up, :duration => 0.5
+              - page[:"admin_show_#{user.id}"].visual_effect :blind_down, :duration => 0.5
+              - page[:"hide_admin_show_#{user.id}_link"].hide
+              - page[:"show_admin_show_#{user.id}_link"].visual_effect :appear
+
           - else
             %div{:id => "admin_form_#{user.id}", :style => 'display:none;'}
               = render :partial => 'form', :locals => {:admin => Admin.new(:user => user)}

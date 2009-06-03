@@ -1,8 +1,5 @@
-Yo
+= I18n.t('txt.service.email.hello')
 = @user.name
 
-Log into your profile with this link
-
+= I18n.t('txt.service.email.body')
 = edit_service_path(@user, :host => 'localhost:3000', :only_path => false, :access_code => @user.access_code)
-
-laters dude!

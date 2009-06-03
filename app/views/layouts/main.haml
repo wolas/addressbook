@@ -2,7 +2,7 @@
 %html
   %head
     %title
-      AddressBook
+      = I18n.t('txt.title')
       - if logged_in?
         == - #{current_admin.user(:select => 'name').name}
 
@@ -18,25 +18,30 @@
     #header
       #title= link_to image_tag('title.png'), root_url
 
-      = link_to 'Companies', companies_url
+      &nbsp;
+
+      = link_to I18n.t('txt.menu.companies'), companies_url
       |
 
       - if logged_in?
         - if admin?
-          = link_to 'Files', files_path
+          = link_to I18n.t('txt.menu.files'), files_path
           |
-          = link_to 'Admins', admins_path
+          = link_to I18n.t('txt.menu.admins'), admins_path
           |
 
-        = link_to 'Logout', logout_url
+        = link_to I18n.t('txt.menu.logout'), logout_url
 
       - else
-        = link_to 'Download', show_download_files_url
+        = link_to I18n.t('txt.menu.download'), show_download_files_url
         |
-        =link_to 'change your profile', service_index_path
+        =link_to I18n.t('txt.menu.change_profile'), service_index_path
         |
-        = link_to 'Log in', new_admin_session_path
+        = link_to I18n.t('txt.menu.login'), new_admin_session_path
 
+      #language_form
+        - form_tag '' do
+          = select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'})
 
 
 

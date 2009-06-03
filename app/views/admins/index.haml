@@ -1,5 +1,5 @@
 .two_col{:style => 'width:50%'}
-  %h1 Role Administration
+  %h1= I18n.t('txt.admin.title')
 
 .two_col{:style => 'width:50%'}
   = render :partial => 'users/search', :locals => {:company => true}

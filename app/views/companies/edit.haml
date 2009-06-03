@@ -1,6 +1,7 @@
-%h1 Editing company
+%h1
+  = I18n.t('txt.edit')
+  = I18n.t('txt.company')
 
 = render :partial => 'form', :locals => {:company => @company }
-  
-= link_to 'Back', companies_path
 
+= link_to = I18n.t('txt.back'), companies_path

@@ -1,3 +1,5 @@
-%h1 New admin
+%h1
+  = I18n.t('txt.new')
+  = I18n.t('txt.admin.admin')
 
 = render :partial => 'form', :locals => {:admin => @admin }

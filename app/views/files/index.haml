@@ -1,37 +1,41 @@
-%h1 File Upload and Download
+%h1= I18n.t('txt.files.title')
 
 .two_col{:style => 'width:50%;'}
-  %h2 Upload
+  %h2= I18n.t('txt.files.upload.title')
+
   - form_tag '/files/upload', :multipart => true do
     .attribute
-      .name File
+      .name= I18n.t('txt.files.upload.file')
       .value= file_field_tag :file
 
     .attribute
-      .name Company
+      .name= I18n.t('txt.company')
       .value= collection_select :user, :company, Company.all, :id, :name
 
     .attribute
       .value= check_box_tag :dry, true, :checked => true
       .name
-        Dry run
+        = I18n.t('txt.files.upload.dry_run')
         %span{:style => 'font-size: 0.7em;font-weight: normal;'}
-          (When checked, no database transactions will occur.)
+          == (#{I18n.t('txt.files.upload.dry_run_msg')})
     %br
-    = submit_tag 'upload'
+    = submit_tag I18n.t('txt.files.upload.upload_word')
 
 .two_col{:style => 'width:50%;'}
-  %h2 Download
+  %h2= I18n.t('txt.files.download.title')
   = render :partial => 'download'
 
+.clear
+
 - if @invalid_users and !@invalid_users.empty?
-  %h3 Invalid Users
+  %h3
+    = I18n.t('txt.invalid')
+    = I18n.t('txt.users.users_word')
 
   %table{:style => 'width: 100%;'}
     %tr
-      %th Name
-      %th Email
-      %th Errors
+      %th= I18n.t('txt.users.attributes.name')
+      %th= I18n.t('txt.users.attributes.email')
 
     - @invalid_users.each_with_index do |user, index|
       %tr{:class => index.even? ? 'even_row' : 'odd_row'}
@@ -45,16 +49,18 @@
 
 
 - if @valid_users and !@valid_users.empty?
-  %h3 Valid Users
+  %h3
+    = I18n.t('txt.valid')
+    = I18n.t('txt.users.users_word')
 
   %table{:style => "width:100%; border: 1px solid #cccccc;"}
     %tr
-      %th User
-      %th Phone
-      %th Mobile
-      %th Email
-      %th Skype
-      %th Company
+      %th= I18n.t('txt.users.attributes.name')
+      %th= I18n.t('txt.users.attributes.phone')
+      %th= I18n.t('txt.users.attributes.mobile')
+      %th= I18n.t('txt.users.attributes.email')
+      %th= I18n.t('txt.users.attributes.skype')
+      %th= I18n.t('txt.users.attributes.company')
 
     - @valid_users.each_with_index do |user, index|
       %tr{:class => index.even? ? 'even_row' : 'odd_row'}
@@ -62,10 +68,5 @@
         %td= user.phone
         %td= user.mobile
         %td{:style => "text-transform:lowercase;"}= user.email
-        %td
-          - if user.skype?
-            %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
-            %a{:href=>"skype:#{user.skype}?chat"}
-              %img{:src=>"http://mystatus.skype.com/smallclassic/#{user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
-
+        %td= link_to image_tag("http://mystatus.skype.com/smallclassic/#{user.skype}", :class=>"skype", :alt=>"My status"), "skype:#{user.skype}?chat" if user.skype?
         %td= link_to user.company.name, user.company if user.company

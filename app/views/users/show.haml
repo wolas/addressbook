@@ -4,45 +4,45 @@
 
 #user_show
   .attribute
-    .name Name
+    .name= I18n.t('txt.users.attributes.name')
     .value= @user.name.capitalize
   .attribute
-    .name Surname
+    .name= I18n.t('txt.users.attributes.surname')
     .value= @user.surname.capitalize
   .attribute
-    .name Phone
+    .name= I18n.t('txt.users.attributes.phone')
     .value= @user.phone
   .attribute
-    .name Mobile
+    .name= I18n.t('txt.users.attributes.mobile')
     .value= @user.mobile
   .attribute
-    .name Fax
+    .name= I18n.t('txt.users.attributes.fax')
     .value= @user.fax
   .attribute
-    .name Email
+    .name= I18n.t('txt.users.attributes.email')
     .value= mail_to @user.email
   .attribute
-    .name Skype
+    .name= I18n.t('txt.users.attributes.skype')
     .value
       - if @user.skype?
         %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
         %a{:href=>"skype:#{@user.skype}?chat"}
           %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
   .attribute
-    .name Company
-    .value= @user.company ? link_to(@user.company.name, @user.company) : 'none'
+    .name= I18n.t('txt.users.attributes.company')
+    .value= @user.company ? link_to(@user.company.name, @user.company) : I18n.t('txt.none')
 %br
 - if admin?
   #update_user{:style => 'display:none;'}
     = render :partial => 'form', :locals => {:user => @user }
 
-  = link_to_function 'Edit', :href => edit_user_path(@user), :id => "edit_user_link" do |page|
+  = link_to_function I18n.t('txt.edit'), :href => edit_user_path(@user), :id => "edit_user_link" do |page|
     - page[:user_show].visual_effect :blind_up, :duration => 0.5
     - page[:update_user].visual_effect :blind_down, :duration => 0.5
     - page[:edit_user_link].hide
     - page[:cancel_edit_user_link].visual_effect :appear
 
-  = link_to_function 'Cancel', :href => nil, :id => 'cancel_edit_user_link', :style => "display:none;" do |page|
+  = link_to_function I18n.t('txt.cancel'), :href => nil, :id => 'cancel_edit_user_link', :style => "display:none;" do |page|
     - page[:user_show].visual_effect :blind_down, :duration => 0.5
     - page[:update_user].visual_effect :blind_up, :duration => 0.5
     - page[:cancel_edit_user_link].hide

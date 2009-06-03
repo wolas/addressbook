@@ -3,7 +3,7 @@
 
   - form_tag '', :id => :search, :onsubmit => "return false;"  do
     .attribute
-      .name Ricerca
+      .name= I18n.t('txt.users.search')
       .value= text_field_tag :name
 
       - if company
@@ -11,7 +11,7 @@
 
       - else
         &nbsp;
-        .value= select_tag :company, "<option>All</option>" + options_from_collection_for_select(Company.all, 'id', 'name'), :include_blank => true
+        .value= select_tag :company, "<option>#{I18n.t('txt.all')}</option>" + options_from_collection_for_select(Company.all, 'id', 'name'), :include_blank => true
 
   = observe_form :search, :url => { :controller => :users, :action => :search }, :frequency => 0.25, :update => :search_results
   %br

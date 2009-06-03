@@ -51,7 +51,8 @@ th {
 h1 {
   padding-left: 80px;
   font-size: 1.9em;
-  color: #999; }
+  color: #999;
+  text-transform: uppercase; }
 
 h2 {
   font-size: 1.4em;
@@ -114,6 +115,9 @@ h4 {
 #search_form {
   float: right;
   padding-top: 25px; }
+
+#language_form {
+  padding-top: 10px; }
 
 #errorExplanation {
   font-weight: bold;

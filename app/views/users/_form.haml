@@ -6,25 +6,25 @@
     .name Company
     .value= f.collection_select :company_id, Company.all, :id, :name
   .attribute
-    .name= f.label :name
+    .name= f.label :name, I18n.t('txt.users.attributes.name')
     .value= f.text_field :name
   .attribute
-    .name= f.label :surname
+    .name= f.label :surname, I18n.t('txt.users.attributes.surname')
     .value= f.text_field :surname
   .attribute
-    .name= f.label :email
+    .name= f.label :email, I18n.t('txt.users.attributes.email')
     .value= f.text_field :email
   .attribute
-    .name= f.label :skype
+    .name= f.label :skype, I18n.t('txt.users.attributes.skype')
     .value= f.text_field :skype
   .attribute
-    .name= f.label :phone
+    .name= f.label :phone, I18n.t('txt.users.attributes.phone')
     .value= f.text_field :phone
   .attribute
-    .name= f.label :mobile
+    .name= f.label :mobile, I18n.t('txt.users.attributes.mobile')
     .value= f.text_field :mobile
   .attribute
-    .name= f.label :fax
+    .name= f.label :fax, I18n.t('txt.users.attributes.fax')
     .value= f.text_field :fax
 
-  = f.submit user.new_record? ? "Register" : "Save"
+  = f.submit I18n.t('txt.save')

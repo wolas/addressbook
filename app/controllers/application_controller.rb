@@ -13,6 +13,20 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_admin_session, :current_admin, :logged_in?
 
+  before_filter :set_locale, :check_language_change
+
+  def set_locale
+    # update session if passed
+    session[:locale] = params[:locale] if params[:locale]
+
+    # set locale based on session or default
+    I18n.locale = session[:locale] || I18n.default_locale
+  end
+
+  def check_language_change
+    redirect_to :back if params[:locale]
+  end
+
   private
   def authorization_failed!
     flash[:error] = "You have no permission to perform this action"
@@ -42,15 +56,6 @@ class ApplicationController < ActionController::Base
       store_location
       flash[:notice] = "You must be logged in to access this page"
       redirect_to new_admin_session_url
-      return false
-    end
-  end
-
-  def require_no_user
-    if current_user
-      store_location
-      flash[:notice] = "You must be logged out to access this page"
-      redirect_to root_url
       return false
     end
   end

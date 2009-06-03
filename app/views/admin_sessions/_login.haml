@@ -2,14 +2,14 @@
 
   = f.error_messages
   .attribute
-    .name= f.label :login
+    .name= f.label :login, I18n.t('txt.login.login')
     .value= f.text_field :login, :size => 20
   .attribute
-    .name= f.label :password
+    .name= f.label :password, I18n.t('txt.login.password')
     .value= f.password_field :password, :size => 20
 
   .attribute
-    .name= f.label :remember_me
+    .name= f.label :remember_me, I18n.t('txt.login.remember')
     .value= f.check_box :remember_me
 
-  = f.submit "Login"
+  = f.submit I18n.t('txt.login.login')

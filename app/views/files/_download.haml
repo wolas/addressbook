@@ -1,12 +1,11 @@
 %p
-  You can download all users
-  = link_to 'here', download_files_path
+  = I18n.t('txt.files.download.download_all')
+  = link_to I18n.t('txt.here'), download_files_path
 
-or
+= I18n.t('txt.or')
 
-%p
-  you can download only one company
+%p= I18n.t('txt.files.download.one_company')
 
-  - form_tag download_files_path do
-    = collection_select :company, :id, Company.all, :id, :name
-    = submit_tag 'download'
+- form_tag download_files_path do
+  = collection_select :company, :id, Company.all, :id, :name
+  = submit_tag I18n.t('txt.files.download_word')

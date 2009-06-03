@@ -6,11 +6,6 @@ class AdminsController < ApplicationController
     @users = User.all :include => :admin
   end
 
-  # GET /admins/1
-  def show
-    @admin = Admin.find(params[:id])
-  end
-
   # GET /admins/new
   def new
     @admin = Admin.new
@@ -27,7 +22,7 @@ class AdminsController < ApplicationController
 
     if @admin.save
       flash[:notice] = 'Admin was successfully created.'
-      redirect_to :back
+      redirect_to admins_url
     else
       render :action => "new"
     end
@@ -39,7 +34,7 @@ class AdminsController < ApplicationController
 
     if @admin.update_attributes(params[:admin])
       flash[:notice] = 'Admin was successfully updated.'
-      redirect_to(@admin)
+      redirect_to admins_url
     else
       render :action => "edit"
     end

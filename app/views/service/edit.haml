@@ -1,35 +1,34 @@
-%h1 Edit your account
+%h1
+  = I18n.t('txt.edit')
+  = I18n.t('txt.users.your_account')
 
-.two_col
-  .ui-widget-content.widget
+- form_for @user, :url => {:controller => :service, :action => :update, :id => @user} do |f|
 
-    - form_for @user, :url => {:controller => :service, :action => :update, :id => @user} do |f|
+  = error_messages_for :user
 
-      = error_messages_for :user
+  .attribute
+    .name Company
+    .value= f.collection_select :company_id, Company.all, :id, :name
+  .attribute
+    .name= f.label :name, I18n.t('txt.users.attributes.name')
+    .value= f.text_field :name
+  .attribute
+    .name= f.label :surname, I18n.t('txt.users.attributes.surname')
+    .value= f.text_field :surname
+  .attribute
+    .name= f.label :email, I18n.t('txt.users.attributes.email')
+    .value= f.text_field :email
+  .attribute
+    .name= f.label :skype, I18n.t('txt.users.attributes.skype')
+    .value= f.text_field :skype
+  .attribute
+    .name= f.label :phone, I18n.t('txt.users.attributes.phone')
+    .value= f.text_field :phone
+  .attribute
+    .name= f.label :mobile, I18n.t('txt.users.attributes.mobile')
+    .value= f.text_field :mobile
+  .attribute
+    .name= f.label :fax, I18n.t('txt.users.attributes.fax')
+    .value= f.text_field :fax
 
-      .attribute
-        .name Company
-        .value= f.collection_select :company_id, Company.all, :id, :name
-      .attribute
-        .name= f.label :name
-        .value= f.text_field :name
-      .attribute
-        .name= f.label :surname
-        .value= f.text_field :surname
-      .attribute
-        .name= f.label :email
-        .value= f.text_field :email
-      .attribute
-        .name= f.label :skype
-        .value= f.text_field :skype
-      .attribute
-        .name= f.label :phone
-        .value= f.text_field :phone
-      .attribute
-        .name= f.label :mobile
-        .value= f.text_field :mobile
-      .attribute
-        .name= f.label :fax
-        .value= f.text_field :fax
-
-      = f.submit 'save'
+  = f.submit I18n.t('txt.save')

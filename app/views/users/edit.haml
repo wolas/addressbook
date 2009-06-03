@@ -1,4 +1,6 @@
-%h1 Edit My Account
+%h1
+  = I18n.t('txt.edit')
+  = I18n.t('txt.users.user')
 
 = render :partial => "form", :locals => {:user => @user}
 
