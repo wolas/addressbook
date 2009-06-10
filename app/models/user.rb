@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   belongs_to :company
   has_one :admin
 
-  validates_presence_of :name, :surname, :email
-  validates_uniqueness_of :email
+  validates_presence_of :name, :surname
+  validates_uniqueness_of :email, :if => lambda {|user| user.email}
 
   before_save :downcase_all
 
@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   def downcase_all
     self.name = name.downcase
     self.surname = surname.downcase
-    self.email = email.downcase
+    self.email = email.downcase if email
   end
 
   def skype?

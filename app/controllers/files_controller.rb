@@ -16,7 +16,7 @@ class FilesController < ApplicationController
       redirect_to(:action => :index) and return
     end
 
-    FasterCSV.foreach(params[:file].path, :skip_blanks => true) do |name, surname, phone, mobile, fax, email|
+    FasterCSV.foreach(params[:file].path, :quote_char => '"', :skip_blanks => true) do |surname, name, email, phone, fax, mobile|
       next if name.nil?
       next if name.include?('Name') or name.include?('name')
 
