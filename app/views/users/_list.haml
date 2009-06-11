@@ -13,7 +13,10 @@
   - users.each_with_index do |user, index|
     %tr{:class => index.odd? ? 'even_row' : 'odd_row'}
 
-      %td.name_cell= widget_for user, true
+      %td.name_cell
+        %span
+          = image_tag 'face.png', :width => '35px', :style => 'vertical-align: middle;'
+          = link_to h(user.full_name), user
 
       %td= user.phone
 
