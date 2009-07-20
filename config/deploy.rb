@@ -18,3 +18,9 @@ after "deploy:update_code", :fix_script_perms
 task :fix_script_perms do
   run "chmod 755 #{latest_release}/script/spin"
 end
+
+namespace :deploy do
+  task :restart do
+    run "god restart addressbook"
+  end
+end
