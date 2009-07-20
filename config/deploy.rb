@@ -22,6 +22,6 @@ end
 
 namespace :deploy do
   task :restart do
-    run "god restart addressbook"
+    run run "sudo -p 'sudo password: ' god restart addressbook"
   end
 end
