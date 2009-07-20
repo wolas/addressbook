@@ -7,6 +7,7 @@ set :user, :yruser
 set :passphrase, 'yrpassword'
 set :deploy_to, "/home/yruser/apps/#{application}"
 set :branch, "master"
+set :use_sudo, true
 
 set :scm, :git
 set :scm_username, "wolas"
@@ -21,6 +22,6 @@ end
 
 namespace :deploy do
   task :restart do
-    run "god restart addressbook"
+    run "sudo god restart addressbook"
   end
 end
