@@ -1,4 +1,5 @@
 default_run_options[:pty] = true
+set :spinner_user, nil
 set :application, "addressbook"
 set :repository,  "git@github.com:wolas/addressbook.git"
 set :scm, :git
