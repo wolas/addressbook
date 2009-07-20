@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_filter :require_admin, :only => [:new, :create, :edit, :update, :destroy]
+  caches_page :search
 
   def search
-    params[:company] ||= "All"
-    users = params[:company].eql?("All") ? User : Company.find(params[:company]).users
+    all = translate('txt.all')
+    params[:company] ||= all
+    users = params[:company].eql?(all) ? User : Company.find(params[:company]).users
     users = users.all :order => 'surname ASC', :conditions => ["name LIKE ? OR surname LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%"], :include => :company
     render( users.empty? ? {:text => "No Users found!"} : {:partial => 'list', :locals => {:users => users, :show_company => params[:company].eql?('All')}})
   end
@@ -37,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = @current_user
+    @user = User.find(params[:id])
   end
 
   def update

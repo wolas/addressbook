@@ -3,7 +3,7 @@
   = error_messages_for :user
 
   .attribute
-    .name Company
+    .name= f.label :name, I18n.t('txt.users.attributes.company')
     .value= f.collection_select :company_id, Company.all, :id, :name
   .attribute
     .name= f.label :name, I18n.t('txt.users.attributes.name')

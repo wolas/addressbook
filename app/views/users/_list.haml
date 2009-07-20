@@ -15,7 +15,7 @@
 
       %td.name_cell
         %span
-          = image_tag 'face.png', :width => '35px', :style => 'vertical-align: middle;'
+          = image_tag 'face.png', :style => 'vertical-align: middle;'
           = link_to h(user.full_name), user
 
       %td= user.phone
@@ -24,13 +24,17 @@
 
       %td= mail_to user.email
 
-      %td= link_to image_tag("http://mystatus.skype.com/smallclassic/#{user.skype}", :class=>"skype", :alt=>"My status"), "skype:#{user.skype}?chat" if user.skype?
+      %td
+        - if user.skype?
+          %span
+            %a{:href => "skype:#{user.skype}?chat"}
+              = image_tag "http://mystatus.skype.com/mediumicon/#{user.skype}", :class=>"skype", :alt=>"My status"
+              = user.skype
 
       - if show_company
         %td= link_to user.company.name, user.company if user.company
 
       - if admin?
         %td
-          = link_to I18n.t('txt.edit'), edit_user_path(user)
-          |
-          = link_to I18n.t('txt.destroy'), user, :method => :delete, :confirm => "#{I18n.t('txt.confirm_delete')} all details for '#{user.full_name}'?"
+          = link_to image_tag('edit.png', :width => '20px', :alt => I18n.t('txt.edit')), edit_user_path(user)
+          = link_to image_tag('bin.png', :width => '15px', :alt => I18n.t('txt.destroy')), user, :method => :delete, :confirm => "#{I18n.t('txt.confirm_delete')} all details for '#{user.full_name}'?"
