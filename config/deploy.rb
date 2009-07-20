@@ -22,6 +22,6 @@ end
 
 namespace :deploy do
   task :restart do
-    run "sudo god restart addressbook"
+    run "god restart addressbook"
   end
 end
