@@ -4,6 +4,7 @@ set :runner, :yruser
 set :application, "addressbook"
 set :repository,  "git@github.com:wolas/addressbook.git"
 set :user, :yruser
+set :password, 'yrpassword'
 set :deploy_to, "/home/yruser/apps/#{application}"
 set :branch, "master"
 
