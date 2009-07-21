@@ -64,7 +64,7 @@
 
     - @valid_users.each_with_index do |user, index|
       %tr{:class => index.even? ? 'even_row' : 'odd_row'}
-        %td{:style => "min-width:100px;text-transform:uppercase;"}= widget_for user, true
+        %td{:style => "min-width:100px;text-transform:uppercase;"}= user.name
         %td= user.phone
         %td= user.mobile
         %td{:style => "text-transform:lowercase;"}= user.email

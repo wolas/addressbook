@@ -16,11 +16,20 @@ class FilesController < ApplicationController
       redirect_to(:action => :index) and return
     end
 
-    FasterCSV.foreach(params[:file].path, :quote_char => '"', :skip_blanks => true) do |surname, name, email, phone, fax, mobile|
+    FasterCSV.foreach(params[:file].path, :quote_char => '"', :skip_blanks => true) do |surname, name, phone, mobile, email|
       next if name.nil?
       next if name.include?('Name') or name.include?('name')
 
-      user = User.new(:company_id => params[:user][:company], :name => name, :surname => surname, :phone => phone, :mobile => mobile, :email => email)
+      user = User.first(:conditions => {:name => name.strip.downcase, :surname => surname.strip.downcase, :company_id => params[:user][:company]})
+      if user
+        user.phone = phone if phone
+        user.email = email if email
+        user.mobile = mobile if mobile
+      else
+        company = Company.find_by_id params[:user][:company]
+        email = "#{name.gsub(' ', '')}.#{surname.gsub(' ', '')}@#{company}.com"
+        user = User.new :company_id => company, :name => name, :surname => surname, :phone => phone, :mobile => mobile, :email => email
+      end
 
       if params[:dry] ? user.valid? : user.save
         @valid_users << user
@@ -28,6 +37,7 @@ class FilesController < ApplicationController
         @invalid_users << user
       end
     end
+
     flash[:notice] = "#{@valid_users.size} users are valid" unless @valid_users.empty?
     flash[:error] = "#{@invalid_users.size} users are invalid" unless @invalid_users.empty?
     render :action => :index
