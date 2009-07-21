@@ -1,7 +1,7 @@
 %h1 All companies
 
 - if admin?
-  = link_to_function "#{I18n.t('txt.new')} #{I18n.t('txt.company')}", :href => new_company_path, :id => 'new_company_link' do |page|
+  = link_to_function "#{I18n.t('txt.new')} #{I18n.t('txt.company')}".capitalize, :href => new_company_path, :id => 'new_company_link' do |page|
     - page[:create_company].visual_effect :blind_down, :duration => 0.5
     - page[:new_company_link].hide
     - page[:cancel_new_company_link].visual_effect :appear

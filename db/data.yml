@@ -1,0 +1,3014 @@
+
+--- 
+companies: 
+  columns: 
+  - id
+  - name
+  - city
+  - street
+  - number
+  - postcode
+  - phone
+  - fax
+  - iva
+  records: 
+  - - "4"
+    - Wunderman
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+  - - "5"
+    - Burson-Marsteller
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+  - - "6"
+    - Y & R
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+  - - "7"
+    - Landor
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+
+--- 
+admins: 
+  columns: 
+  - id
+  - login
+  - password_salt
+  - crypted_password
+  - persistence_token
+  - user_id
+  records: 
+  - - "4"
+    - wolas
+    - ea90605a9fb939e6fa20c91f001c514c7a09ddedb4f394cf423a2f42e82766a45ec1adf709ddc6347f520b9c8eed5f6dd94cb52bb56c5a4ebf8cd120c0a4d633
+    - 5808195601452b9ffa268e5c608f1dc64a65916ce741e0f85d6282bbf2982db5370c293e774bf04dd828c0b5490d6ab19e2b5b46d5d5765cf1c3842dc5afb21d
+    - 7862f642d45b706fe82f325215b01b9adf8b3d0a7b9b82b1fcfed290cd3110bc0f23437f6689905cb2aaf8afbd4b8f64d1dfc24683a50d07a09af3ace6aed8e7
+    - "956"
+
+--- 
+users: 
+  columns: 
+  - id
+  - surname
+  - phone
+  - mobile
+  - fax
+  - email
+  - company_id
+  - created_at
+  - updated_at
+  - admin
+  - skype
+  - name
+  - access_code
+  records: 
+  - - "874"
+    - baroni
+    - 
+    - +39(349)7668013
+    - 
+    - gabriele.baroni@bm.com
+    - "5"
+    - 2009-06-10 18:11:48
+    - 2009-06-10 18:11:48
+    - false
+    - 
+    - gabriele
+    - 
+  - - "875"
+    - basili
+    - 
+    - 
+    - 
+    - luca.basili.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:48
+    - 2009-06-10 18:11:48
+    - false
+    - 
+    - luca
+    - 
+  - - "876"
+    - bertuzzi
+    - "3592"
+    - +39(340)3701647
+    - 
+    - elisa.bertuzzi@bm.com
+    - "5"
+    - 2009-06-10 18:11:48
+    - 2009-06-10 18:11:48
+    - false
+    - 
+    - elisa
+    - 
+  - - "877"
+    - bianchin
+    - 
+    - 
+    - 
+    - valeria.bianchin.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - valeria
+    - 
+  - - "878"
+    - bianchi
+    - 
+    - 
+    - 
+    - paolo.bianchi@sudler.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - paolo
+    - 
+  - - "879"
+    - bramati
+    - 
+    - 
+    - 
+    - paola.bramati@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - paola
+    - 
+  - - "880"
+    - brusoni
+    - 
+    - +39(349)7668015
+    - 
+    - stefano.brusoni@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - stefano
+    - 
+  - - "881"
+    - cafieri
+    - 
+    - 
+    - 
+    - tiziana.cafieri@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - tiziana
+    - 
+  - - "882"
+    - cariello
+    - 
+    - 
+    - 
+    - giuseppe.cariello@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - giuseppe
+    - 
+  - - "883"
+    - cazzaniga
+    - 
+    - 
+    - 
+    - daniele.cazzaniga@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - daniele
+    - 
+  - - "884"
+    - celant
+    - 
+    - 
+    - 
+    - marina.celant@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - marina
+    - 
+  - - "885"
+    - cerruti
+    - 
+    - 
+    - 
+    - claudia.cerruti.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - claudia
+    - 
+  - - "886"
+    - ceruti
+    - "3589"
+    - 39(349)7668018
+    - 
+    - maria.teresa.ceruti@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - maria teresa
+    - 
+  - - "887"
+    - !binary |
+      Y29sw7I=
+
+    - 
+    - 
+    - 
+    - stefania.colo@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - stefania
+    - 
+  - - "888"
+    - corradi
+    - 
+    - 
+    - 
+    - claudia.corradi@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - claudia
+    - 
+  - - "889"
+    - davolio
+    - 
+    - 
+    - 
+    - roberto.davolio.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - roberto
+    - 
+  - - "890"
+    - degiovanni
+    - 
+    - 
+    - 
+    - mara.linda.degiovanni@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - maria linda
+    - 
+  - - "891"
+    - dellanoce
+    - "3551"
+    - 
+    - 
+    - barbara.dellanoce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - barbara
+    - 
+  - - "892"
+    - dercole
+    - 
+    - 
+    - 
+    - alessandra.dercole@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - alessandra
+    - 
+  - - "893"
+    - fiamberti
+    - 
+    - 
+    - 
+    - 
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - fabio
+    - 
+  - - "894"
+    - fumagalli
+    - "3538"
+    - 
+    - 
+    - luca.fumagalli@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - luca
+    - 
+  - - "895"
+    - gargiulo
+    - 
+    - 
+    - 
+    - massimo.gargiulo@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - massimo
+    - 
+  - - "896"
+    - gentile
+    - 
+    - 
+    - 
+    - giuliana.gentile@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - giuliana
+    - 
+  - - "897"
+    - gerritsen
+    - 
+    - 
+    - 
+    - eric.gerritsen@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - eric
+    - 
+  - - "898"
+    - gerritsen
+    - 
+    - 
+    - 
+    - eric_gerritsen@it.bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - eric
+    - 
+  - - "899"
+    - giaculli
+    - "3514"
+    - 39(348)0062419
+    - 
+    - lucia.giaculli@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - lucia
+    - 
+  - - "900"
+    - gobbo
+    - 
+    - 
+    - 
+    - cristina.gobbo.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - cristina
+    - 
+  - - "901"
+    - gorini
+    - 
+    - +39(348)0703550
+    - 
+    - daniela.gorini@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - daniela
+    - 
+  - - "902"
+    - guerieri gonzaga
+    - 
+    - 
+    - 
+    - anna.guerrieri@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - anna
+    - 
+  - - "903"
+    - jayaprakash
+    - 
+    - 
+    - 
+    - c_tatianat@it.bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - binoy
+    - 
+  - - "904"
+    - lombardi
+    - 
+    - 
+    - 
+    - elena.lombardi@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - elena
+    - 
+  - - "905"
+    - martinello
+    - "3532"
+    - 
+    - 
+    - alice.martinello.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - alice
+    - 
+  - - "906"
+    - mazzone
+    - 
+    - 
+    - 
+    - gianfranco.mazzone@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - gianfranco
+    - 
+  - - "907"
+    - mercandalli
+    - 
+    - 00(39)3480079126
+    - 
+    - simona.mercandalli@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - simona
+    - 
+  - - "908"
+    - mioni
+    - 
+    - 
+    - 
+    - francesca.mioni@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - francesca
+    - 
+  - - "909"
+    - nutrito
+    - 
+    - 
+    - 
+    - davide.nutrito@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - davide
+    - 
+  - - "910"
+    - osella
+    - 
+    - 
+    - 
+    - francesca.osella.ce@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - francesca
+    - 
+  - - "911"
+    - pastore
+    - 
+    - 
+    - 
+    - rossana.pastore@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - rossana
+    - 
+  - - "912"
+    - poggio
+    - "3527"
+    - 39(340)5505096
+    - 
+    - laura.poggio@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - laura
+    - 
+  - - "913"
+    - quaglio
+    - "3552"
+    - 003(340)7093200
+    - 
+    - alessia.quaglio@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - alessia
+    - 
+  - - "914"
+    - radaelli
+    - 
+    - 
+    - 
+    - marilena.radaelli@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - marilena
+    - 
+  - - "915"
+    - ragazzoli
+    - 
+    - 
+    - 
+    - francesca.ragazzoli@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - francesca
+    - 
+  - - "916"
+    - recchia
+    - "566"
+    - +39(346)7025060
+    - 
+    - roberta.recchia@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - roberta
+    - 
+  - - "917"
+    - redaelli
+    - 
+    - 
+    - 
+    - valeria.redaelli@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - valeria
+    - 
+  - - "918"
+    - ricciardi
+    - "3549"
+    - 39(340)7143414
+    - 
+    - nicola.ricciardi@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - nicola
+    - 
+  - - "919"
+    - rucco
+    - 
+    - 
+    - 
+    - alessandro.rucco@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - alessandro
+    - 
+  - - "920"
+    - tosi
+    - 
+    - 
+    - 
+    - raffaella.tosi@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - raffaella
+    - 
+  - - "921"
+    - trezzi
+    - 
+    - 
+    - 
+    - cinzia.trezzi@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - cinzia
+    - 
+  - - "922"
+    - turcatti
+    - 
+    - 39(349)766 8034
+    - 
+    - mauro.turcatti@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - mauro
+    - 
+  - - "923"
+    - valenti
+    - "3531"
+    - 39(349)7668037
+    - 
+    - lara.valenti@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - lara
+    - 
+  - - "924"
+    - valle
+    - 
+    - 
+    - 
+    - tommaso.valle@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - tommaso
+    - 
+  - - "925"
+    - vergani
+    - "3807"
+    - 39(349)7668102
+    - 
+    - silvia.vergani@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - silvia
+    - 
+  - - "926"
+    - vermee
+    - 
+    - 
+    - 
+    - sofia_sermonti@it.bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - marc
+    - 
+  - - "927"
+    - violante
+    - 
+    - 
+    - 
+    - antonella.violante@bm.com
+    - "5"
+    - 2009-06-10 18:11:49
+    - 2009-06-10 18:11:49
+    - false
+    - 
+    - antonella
+    - 
+  - - "928"
+    - alboni
+    - "2413"
+    - 39(339)8058673
+    - 
+    - serena.alboni.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:55
+    - 2009-06-10 18:18:55
+    - false
+    - 
+    - serena
+    - 
+  - - "930"
+    - alesani
+    - "2332"
+    - 
+    - 
+    - dario.alesani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - dario
+    - 
+  - - "931"
+    - alessiani
+    - "2271"
+    - (347)8559505
+    - 
+    - stefano.alessiani.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - stefano
+    - 
+  - - "932"
+    - alizzi
+    - 
+    - 
+    - 
+    - rosa.alizzi.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - rosa
+    - 
+  - - "933"
+    - andreoni
+    - "2324"
+    - 
+    - 
+    - monica.andreoni@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - monica
+    - 
+  - - "934"
+    - apone
+    - "267"
+    - 
+    - 
+    - mary.apone@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - mary
+    - 
+  - - "935"
+    - baroni
+    - "349"
+    - 
+    - 
+    - arianna.baroni@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - arianna
+    - 
+  - - "936"
+    - baroni
+    - "2230"
+    - 39(329)9070008
+    - 
+    - francesca.baroni@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - francesca
+    - 
+  - - "937"
+    - barracchia
+    - 
+    - 
+    - 
+    - nicola.barracchia@yrbrands.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - nicola
+    - 
+  - - "938"
+    - basile
+    - "2288"
+    - 
+    - 
+    - marcello.basile.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - marcello
+    - 
+  - - "939"
+    - battaini
+    - "2368"
+    - 
+    - 
+    - alessandro.battaini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - alessandro
+    - 
+  - - "940"
+    - beretta
+    - "339"
+    - 
+    - 
+    - chiara.beretta.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - chiara
+    - 
+  - - "941"
+    - bernardi
+    - "296"
+    - +39(349)7422211
+    - 
+    - isabella.bernardi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - isabella
+    - 
+  - - "942"
+    - bernasconi
+    - 
+    - 
+    - 
+    - gabriele.bernasconi@yrbrands.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - gabriele
+    - 
+  - - "943"
+    - biagini
+    - "277"
+    - 0039(348)3938420
+    - 
+    - laura.biagini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - laura
+    - 
+  - - "944"
+    - bianchi
+    - "2279"
+    - +39(349)7422217
+    - 
+    - carola.bianchi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - carola
+    - 
+  - - "945"
+    - bonanni
+    - "222"
+    - 39(335)6975915
+    - 
+    - marco.bonanni@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - marco
+    - 
+  - - "946"
+    - bovio
+    - 
+    - 
+    - 
+    - cecilia.bovio@yrbrands.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - cecilia
+    - 
+  - - "947"
+    - breghelli
+    - "2202"
+    - 
+    - 
+    - davide.breghelli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - davide
+    - 
+  - - "948"
+    - caccia
+    - "318"
+    - +39(349)8102225
+    - 
+    - cinzia.caccia.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - cinzia
+    - 
+  - - "949"
+    - camedda
+    - "338"
+    - 
+    - 
+    - alessandro.camedda@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - alessandro
+    - 
+  - - "950"
+    - campoccia
+    - "213"
+    - 
+    - 
+    - elena.campoccia@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - elena
+    - 
+  - - "951"
+    - cananzi
+    - "2304"
+    - 39(348)7422200
+    - 
+    - valter.cananzi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - valter
+    - 
+  - - "952"
+    - candeago
+    - 
+    - 
+    - 
+    - silvia.candeago@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - silvia
+    - 
+  - - "953"
+    - cantalamessa
+    - 
+    - 
+    - 
+    - marco.cantalamessa@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - marco
+    - 
+  - - "954"
+    - cantarella
+    - "307"
+    - 
+    - 
+    - chiara.cantarella@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - chiara
+    - 
+  - - "955"
+    - cappelli
+    - "396"
+    - 347(8238413)
+    - 
+    - sara.cappelli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - sara
+    - 
+  - - "956"
+    - carbo penche
+    - "2339"
+    - ""
+    - ""
+    - jacobo.carbo.penche.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-11 08:48:25
+    - false
+    - thewolas
+    - jacobo
+    - 
+  - - "957"
+    - carena
+    - "2386"
+    - 
+    - 
+    - simona.carena@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - simona
+    - 
+  - - "958"
+    - carla
+    - "310"
+    - (329)9070035
+    - 
+    - carla.padovani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - padovani
+    - 
+  - - "959"
+    - !binary |
+      Y2Fyw7k=
+
+    - "2235"
+    - 
+    - 
+    - alessandra.caru@yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - alessandra
+    - 
+  - - "960"
+    - catani
+    - 
+    - 
+    - 
+    - alessandro.catani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - alessandro
+    - 
+  - - "961"
+    - cellini
+    - 
+    - 
+    - 
+    - francesco.cellini.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - francesco
+    - 
+  - - "962"
+    - chiot
+    - "2284"
+    - +39(349)7422208
+    - 
+    - germana.chiot@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - germana
+    - 
+  - - "963"
+    - cirillo
+    - 
+    - 
+    - 
+    - alessandro.cirillo.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - alessandro
+    - 
+  - - "964"
+    - colombo
+    - "2325"
+    - 39(329)90 70 013
+    - 
+    - gabriella.colombo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - gabriella
+    - 
+  - - "965"
+    - comand
+    - 
+    - 
+    - 
+    - cristian.comand@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - cristian
+    - 
+  - - "966"
+    - coppi
+    - "313"
+    - 
+    - 
+    - alessandro.coppi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - alessandro
+    - 
+  - - "967"
+    - corazza
+    - 
+    - 
+    - 
+    - elisabetta.corazza@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - elisabetta
+    - 
+  - - "968"
+    - corneo
+    - "336"
+    - 
+    - 
+    - benedetta.corneo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - benedetta
+    - 
+  - - "969"
+    - cristina
+    - "321"
+    - 
+    - 
+    - cristina.arienti@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - arienti
+    - 
+  - - "970"
+    - croce
+    - 
+    - 
+    - 
+    - rodolfo.croce@teamalfa.it
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - rodolfo
+    - 
+  - - "971"
+    - crosignani
+    - "2227"
+    - 
+    - 
+    - cristina.crosignani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - cristina
+    - 
+  - - "972"
+    - de angelis
+    - 
+    - 
+    - 
+    - fiore.de.angelis@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - fiore
+    - 
+  - - "973"
+    - de nicola
+    - 
+    - 
+    - 
+    - chiara.de.nicola.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - chiara
+    - 
+  - - "974"
+    - degli occhi
+    - 
+    - 
+    - 
+    - chiara.degli.occhi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - chiara
+    - 
+  - - "975"
+    - deidda
+    - "345"
+    - 
+    - 
+    - aurora.deidda@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - aurora
+    - 
+  - - "976"
+    - del deo
+    - 
+    - 
+    - 
+    - raffaella.del.deo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - raffaella
+    - 
+  - - "977"
+    - demaj
+    - 
+    - 
+    - 
+    - klodjana.demaj@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - klodjana
+    - 
+  - - "978"
+    - di tullio
+    - 
+    - 
+    - 
+    - antonella.di.tullio@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - antonella
+    - 
+  - - "979"
+    - diana
+    - 
+    - 0039(349)7422215
+    - 
+    - claudio.diana@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - claudio
+    - 
+  - - "980"
+    - dimalio
+    - 
+    - 
+    - 
+    - fabio.dimalio@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - fabio
+    - 
+  - - "981"
+    - dimarco
+    - "276"
+    - 
+    - 
+    - isabella.di.marco@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - isabella
+    - 
+  - - "982"
+    - dossena
+    - 
+    - 
+    - 
+    - luisa.dossena@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - luisa
+    - 
+  - - "983"
+    - enrici
+    - "2269"
+    - 39(340)7002204
+    - 
+    - isotta.enrici@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - isotta
+    - 
+  - - "984"
+    - fenini
+    - "2406"
+    - ""
+    - ""
+    - stefano.fenini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:29:29
+    - false
+    - ""
+    - stefano
+    - 
+  - - "985"
+    - ferrario
+    - "272"
+    - (329)9070016
+    - 
+    - milena.ferrario.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - milena
+    - 
+  - - "986"
+    - ferrari
+    - "2300"
+    - 
+    - 
+    - paolo_ferrari@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - paolo
+    - 
+  - - "987"
+    - ferullo
+    - "2365"
+    - 39(349)7422202
+    - 
+    - gabriella.ferullo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - gabriella
+    - 
+  - - "988"
+    - frisoni
+    - "203"
+    - 0039(335)6975920
+    - 
+    - arrigo.frisoni.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - arrigo
+    - 
+  - - "989"
+    - fumagalli
+    - "330"
+    - 338(6899)356
+    - 
+    - andrea.fumagalli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - andrea
+    - 
+  - - "990"
+    - galindo
+    - "299"
+    - 
+    - 
+    - leidy.galindo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - leidy
+    - 
+  - - "991"
+    - galperti
+    - "297"
+    - 39(340)7428946
+    - 
+    - serena.galperti@yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - serena
+    - 
+  - - "992"
+    - giacopinelli
+    - 
+    - 
+    - 
+    - giulia.giacopinelli.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - giulia
+    - 
+  - - "993"
+    - gilli
+    - "2376"
+    - 39(347)8936210
+    - 
+    - chiara.gilli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - chiara
+    - 
+  - - "994"
+    - gilli
+    - "2331"
+    - 
+    - 
+    - francesca.gilli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:56
+    - 2009-06-10 18:18:56
+    - false
+    - 
+    - francesca
+    - 
+  - - "995"
+    - gori
+    - 
+    - 
+    - 
+    - francesco.gori@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - francesco
+    - 
+  - - "996"
+    - gualtieri
+    - 
+    - +39(329)9070019
+    - 
+    - gianluca.gualtieri@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - gianluca
+    - 
+  - - "997"
+    - guarnerio
+    - "2373"
+    - 
+    - 
+    - sara.guarnerio@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - sara
+    - 
+  - - "998"
+    - itmil
+    - 
+    - 
+    - 
+    - dario.itmil@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - dario
+    - 
+  - - "999"
+    - itmil
+    - 
+    - 
+    - 
+    - marco.itmil@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - marco
+    - 
+  - - "1000"
+    - itmil
+    - 
+    - 
+    - 
+    - paolo.itmil@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - paolo
+    - 
+  - - "1001"
+    - jorio
+    - "337"
+    - 39(349)7422207
+    - 
+    - manuela.jorio@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - manuela
+    - 
+  - - "1002"
+    - la selva
+    - "244"
+    - 39(0329)9070040
+    - 
+    - roberta.la.selva@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - roberta
+    - 
+  - - "1003"
+    - lama
+    - 
+    - 
+    - 
+    - pushpa.lama@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - pushpa
+    - 
+  - - "1004"
+    - lanzarotti
+    - 
+    - +39(349)7422218
+    - 
+    - giovanni.lanzarotti@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - giovanni
+    - 
+  - - "1005"
+    - lazzarini
+    - "2375"
+    - 
+    - 
+    - valentina.lazzarini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - valentina
+    - 
+  - - "1006"
+    - lentini
+    - 
+    - 
+    - 
+    - paolo.lentini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - paolo
+    - 
+  - - "1007"
+    - levi
+    - "588"
+    - 39(338)8192861
+    - 
+    - alberto.levi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - alberto
+    - 
+  - - "1008"
+    - lombardi
+    - 
+    - 
+    - 
+    - marco.lombardi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - marco
+    - 
+  - - "1009"
+    - lualdi
+    - "2249"
+    - 
+    - 
+    - valerio.lualdi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - valerio
+    - 
+  - - "1010"
+    - luisi
+    - 
+    - 
+    - 
+    - vesna.luisi@it.wunderman.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - vesna
+    - 
+  - - "1011"
+    - lu
+    - 
+    - 
+    - 
+    - alessandro_canale@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - parker
+    - 
+  - - "1012"
+    - marelli
+    - "303"
+    - 0039(339)8214849
+    - 
+    - antonio.marelli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - antonio
+    - 
+  - - "1013"
+    - massazza
+    - "416"
+    - 
+    - 
+    - alberto.massazza@it.wunderman.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - alberto
+    - 
+  - - "1014"
+    - massera
+    - 
+    - 
+    - 
+    - marilena.massera@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - marilena
+    - 
+  - - "1015"
+    - mauri
+    - "308"
+    - 
+    - 
+    - umberto.mauri@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - umberto
+    - 
+  - - "1016"
+    - melzi
+    - 
+    - 
+    - 
+    - lodovico.melzid'eril@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - lodovico
+    - 
+  - - "1017"
+    - moltedo
+    - "2322"
+    - +39(346)0775171
+    - 
+    - giuseppe.moltedo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - giuseppe
+    - 
+  - - "1018"
+    - moltedo
+    - "2322"
+    - +39(346)0775171
+    - 
+    - giuseppe.moltedo@teamalfa.it
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - giuseppe
+    - 
+  - - "1019"
+    - morino
+    - 
+    - 
+    - 
+    - nicola.morino@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - nicola
+    - 
+  - - "1020"
+    - motta
+    - "362"
+    - 
+    - 
+    - daniela.motta@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - daniela
+    - 
+  - - "1021"
+    - nicolai
+    - "265"
+    - +39(348)3925684
+    - 
+    - manuela.nicolai.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - manuela
+    - 
+  - - "1022"
+    - nicoletta
+    - "221"
+    - 
+    - 
+    - nicoletta.di.tullio@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - di tullio
+    - 
+  - - "1023"
+    - nomis di pollone
+    - Y&R Milano
+    - 
+    - 
+    - bernadette.nomisdipollone@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - bernadette
+    - 
+  - - "1024"
+    - nuti
+    - "2211"
+    - +39(349)7422216
+    - 
+    - elisabetta.nuti@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - elisabetta
+    - 
+  - - "1025"
+    - oliveto
+    - "2381"
+    - 0039(335)6896774
+    - 
+    - valerio.oliveto@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - valerio
+    - 
+  - - "1026"
+    - pagani
+    - "366"
+    - 
+    - 
+    - veronica.pagani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - veronica
+    - 
+  - - "1027"
+    - paglialonga
+    - "2205"
+    - 
+    - 
+    - elena.paglialonga@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - elena
+    - 
+  - - "1028"
+    - panareo
+    - "287"
+    - 0039(346)0773947
+    - 
+    - marco.panareo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - marco
+    - 
+  - - "1029"
+    - papetti
+    - 
+    - 
+    - 
+    - barbara.papetti@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - barbara
+    - 
+  - - "1030"
+    - paratico
+    - "2243"
+    - 39(348)0137310
+    - 
+    - pamela.paratico@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - pamela
+    - 
+  - - "1031"
+    - pariani
+    - "238"
+    - 0039(329)9070028
+    - 
+    - chiara.pariani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - chiara
+    - 
+  - - "1032"
+    - pedrazzoli
+    - "2355"
+    - 
+    - 
+    - valentina.pedrazzoli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - valentina
+    - 
+  - - "1033"
+    - peghin
+    - "2241"
+    - 349(5214417)
+    - 
+    - mattia.peghin@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - mattia
+    - 
+  - - "1034"
+    - pollo
+    - "246"
+    - 0039(349)7422214
+    - 
+    - paolo.pollo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - paolo
+    - 
+  - - "1035"
+    - puricelli
+    - "2218"
+    - 39(349)7666901
+    - 
+    - danilo.puricelli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - danilo
+    - 
+  - - "1036"
+    - repetto
+    - "233"
+    - 
+    - 
+    - marina.repetto.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - marina
+    - 
+  - - "1037"
+    - rittatore
+    - "2323"
+    - 
+    - 
+    - lavinia.rittatore@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - lavinia
+    - 
+  - - "1038"
+    - rolfo
+    - 
+    - 
+    - 
+    - matteo.rolfo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - matteo
+    - 
+  - - "1039"
+    - romani
+    - 
+    - 
+    - 
+    - romina.romani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - romina
+    - 
+  - - "1040"
+    - romito
+    - "371"
+    - 
+    - 
+    - rossana.romito@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - rossana
+    - 
+  - - "1041"
+    - roselli
+    - "302"
+    - 0039(329)9070032
+    - 
+    - federica.roselli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - federica
+    - 
+  - - "1042"
+    - roselli
+    - "2421"
+    - 39(329)9070038
+    - 
+    - luca.roselli@yrbrands.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - luca
+    - 
+  - - "1043"
+    - rovelli
+    - 
+    - 
+    - 
+    - renato.rovelli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - renato
+    - 
+  - - "1044"
+    - sala
+    - 
+    - 
+    - 
+    - elisabetta.sala@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - elisabetta
+    - 
+  - - "1045"
+    - sala
+    - 
+    - 39(349)7422205
+    - 
+    - katia.sala@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - katia
+    - 
+  - - "1046"
+    - salice
+    - "2220"
+    - 
+    - 
+    - valentina.salice.ce@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - valentina
+    - 
+  - - "1047"
+    - sandra
+    - 
+    - +39(349)7422212
+    - 
+    - sandra.macasso@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - macasso
+    - 
+  - - "1048"
+    - santoro
+    - 
+    - 
+    - 
+    - annamaria.santoro@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - annamaria
+    - 
+  - - "1049"
+    - sarzana
+    - "586"
+    - 39(328)7266450
+    - 
+    - matteo.sarzana@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - matteo
+    - 
+  - - "1050"
+    - scotti
+    - 
+    - 
+    - 
+    - mara.scotti@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - mara
+    - 
+  - - "1051"
+    - scotto
+    - 
+    - 
+    - 
+    - maurizio.scotto@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - maurizio
+    - 
+  - - "1052"
+    - sguinzo
+    - "320"
+    - 
+    - 
+    - stella.sguinzo@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - stella
+    - 
+  - - "1053"
+    - shqarri
+    - 
+    - 
+    - 
+    - ronald.shqarri@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - ronald
+    - 
+  - - "1054"
+    - sottili
+    - 
+    - 
+    - 
+    - laura.sottili@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - laura
+    - 
+  - - "1055"
+    - stenco
+    - 
+    - 
+    - 
+    - alessandro.stenco@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - alessandro
+    - 
+  - - "1056"
+    - stoppelli
+    - "599"
+    - 39(338)4372377
+    - 
+    - paola.stoppelli@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - paola
+    - 
+  - - "1057"
+    - strada
+    - "360"
+    - 39(329)9070036
+    - 
+    - elisabetta.strada@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - elisabetta
+    - 
+  - - "1058"
+    - straini
+    - "2377"
+    - 
+    - 
+    - marta.straini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - marta
+    - 
+  - - "1059"
+    - tardani
+    - 
+    - 039(339)1318206
+    - 
+    - diego.tardani@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - diego
+    - 
+  - - "1060"
+    - taschini
+    - 
+    - 
+    - 
+    - anna.taschini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - anna
+    - 
+  - - "1061"
+    - triglia
+    - "359"
+    - 
+    - 
+    - francesco.triglia@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:57
+    - 2009-06-10 18:18:57
+    - false
+    - 
+    - francesco
+    - 
+  - - "1062"
+    - trussi
+    - "384"
+    - 
+    - 
+    - riccardo.trussi@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:58
+    - 2009-06-10 18:18:58
+    - false
+    - 
+    - riccardo
+    - 
+  - - "1063"
+    - valentini
+    - "2329"
+    - 
+    - 
+    - manuela.valentini@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:58
+    - 2009-06-10 18:18:58
+    - false
+    - 
+    - manuela
+    - 
+  - - "1064"
+    - villa
+    - "316"
+    - (348)9322540
+    - 
+    - gianluca.villa@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:58
+    - 2009-06-10 18:18:58
+    - false
+    - 
+    - gianluca
+    - 
+  - - "1065"
+    - visconti
+    - "340"
+    - 
+    - 
+    - priscilla.visconti@it.yr.com
+    - "6"
+    - 2009-06-10 18:18:58
+    - 2009-06-10 18:18:58
+    - false
+    - 
+    - priscilla
+    - 
+  - - "1066"
+    - zezza
+    - "596"
+    - +39(349)0968936
+    - 
+    - giovanni.zezza@yrbrands.com
+    - "6"
+    - 2009-06-10 18:18:58
+    - 2009-06-10 18:18:58
+    - false
+    - 
+    - giovanni
+    - 
+  - - "1067"
+    - atara
+    - 
+    - 
+    - 
+    - jatan_atara@in.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - jatan
+    - 
+  - - "1068"
+    - azzone
+    - 
+    - 
+    - 
+    - giuseppe.azzone@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - giuseppe
+    - 
+  - - "1069"
+    - benazzi
+    - 
+    - 
+    - 
+    - guia.benazzi@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - guia
+    - 
+  - - "1070"
+    - biagini
+    - "403"
+    - 39(349)7666919
+    - 
+    - cristina.biagini@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - cristina
+    - 
+  - - "1071"
+    - budicin
+    - 
+    - 39(340)1961379
+    - 
+    - massimo.budicin@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - massimo
+    - 
+  - - "1072"
+    - caluzzi
+    - 
+    - 
+    - 
+    - daniela.caluzzi.ce@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - daniela
+    - 
+  - - "1073"
+    - caluzzi
+    - 
+    - 
+    - 
+    - nicoletta.caluzzi.ce@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - nicoletta
+    - 
+  - - "1074"
+    - caucci
+    - 
+    - 
+    - 
+    - paolo.caucci@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - paolo
+    - 
+  - - "1075"
+    - chieregato
+    - "2472"
+    - 39(348)2860176
+    - 
+    - daniele.chieregato@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - daniele
+    - 
+  - - "1076"
+    - coenen
+    - "409"
+    - 39(347)9664344
+    - 
+    - toon.coenen@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - toon
+    - 
+  - - "1077"
+    - conti
+    - 
+    - 39(329)9070244
+    - 
+    - laura.conti@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - laura
+    - 
+  - - "1078"
+    - daffara
+    - "477"
+    - 
+    - 
+    - elena.daffara@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - elena
+    - 
+  - - "1079"
+    - dealoisio
+    - 
+    - 
+    - 
+    - luigi.de.aloisio@it.yr.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - luigi
+    - 
+  - - "1080"
+    - forzatti
+    - "2434"
+    - 
+    - 
+    - monica.forzatti@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - monica
+    - 
+  - - "1081"
+    - fusina
+    - 
+    - 
+    - 
+    - giacomo.fusina@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - giacomo
+    - 
+  - - "1082"
+    - gadaleta
+    - "2411"
+    - +39(348)1000726
+    - 
+    - antonio.gadaleta@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - antonio
+    - 
+  - - "1083"
+    - gugliotta
+    - "2417"
+    - 39(348)7962013
+    - 
+    - cristina.gugliotta@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - cristina
+    - 
+  - - "1084"
+    - leovino
+    - "2437"
+    - 39(338)9758667
+    - 
+    - valentina.leovino@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - valentina
+    - 
+  - - "1085"
+    - lombardi
+    - "2328"
+    - 
+    - 
+    - federico.lombardi@it.yr.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - federico
+    - 
+  - - "1086"
+    - meroni
+    - "435"
+    - +39(348)6600898
+    - 
+    - marco.meroni@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - marco
+    - 
+  - - "1087"
+    - montalbetti
+    - "468"
+    - 
+    - 
+    - fabio.montalbetti@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - fabio
+    - 
+  - - "1088"
+    - nocera
+    - "446"
+    - +39(349)1132333
+    - 
+    - benedetta.nocera@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - benedetta
+    - 
+  - - "1089"
+    - noviello
+    - "481"
+    - 
+    - 
+    - graziella.noviello@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - graziella
+    - 
+  - - "1090"
+    - pedretti
+    - 
+    - 
+    - 
+    - elena.pedretti.ce@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - elena
+    - 
+  - - "1091"
+    - perrin
+    - "426"
+    - 00(39)3497666916
+    - 
+    - vincent.perrin@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - vincent
+    - 
+  - - "1092"
+    - pirovano
+    - "258"
+    - 
+    - 
+    - rossana.pirovano@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - rossana
+    - 
+  - - "1093"
+    - rizzo
+    - "436"
+    - 
+    - 
+    - filippo.rizzo@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - filippo
+    - 
+  - - "1094"
+    - rocco
+    - 
+    - 
+    - 
+    - ester.rocco@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - ester
+    - 
+  - - "1095"
+    - sacco
+    - "2418"
+    - 39(335)5221344
+    - 
+    - elena.sacco@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - elena
+    - 
+  - - "1096"
+    - scavo
+    - 
+    - 
+    - 
+    - fadi.scavo.ce@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - fadi
+    - 
+  - - "1097"
+    - sgarella
+    - "488"
+    - 39(348)2325838
+    - 
+    - roberto.sgarella@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - roberto
+    - 
+  - - "1098"
+    - spagnolo
+    - "415"
+    - 39(349)7666927
+    - 
+    - natale.spagnolo@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - natale
+    - 
+  - - "1099"
+    - spinetta
+    - "445"
+    - 39(348)4737489
+    - 
+    - enrico.spinetta@it.wunderman.com
+    - "4"
+    - 2009-06-10 18:22:48
+    - 2009-06-10 18:22:48
+    - false
+    - 
+    - enrico
+    - 
