@@ -30,7 +30,7 @@ class ServiceController < ApplicationController
     if user
       code = User.generate_access_code
       user.update_attributes :access_code => code
-      logger.info "Access code (#{code}) generated for #{user.name} #{user.surname} at #{Time.now.inspect}"
+      logger.info "Access code (#{code}) should have been generated for #{user.name} #{user.surname} at #{Time.now.inspect}"
       Notifier.deliver_send_access(user)
       redirect_to :action => :thank_you
     else
