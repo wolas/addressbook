@@ -29,8 +29,8 @@
           %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
           %span
             %a{:href => "skype:#{user.skype}?chat"}
-              = image_tag "http://mystatus.skype.com/mediumicon/#{user.skype}", :class=>"skype", :alt=>"My status"
-              = user.skype
+              = image_tag "http://mystatus.skype.com/mediumicon/#{@user.skype}", :class=>"skype", :alt=>"My status"
+              = @user.skype
     .attribute
       .name= translate('txt.users.attributes.company')
       .value= @user.company ? link_to(@user.company.name, @user.company) : translate('txt.none')
