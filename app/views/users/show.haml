@@ -3,8 +3,8 @@
   account.
 
 #user_show
-  %div{:style => 'width: 200px; float:left'}
-    = image_tag @user.avatar.url, :width => "200px"
+  %div{:style => 'width: 300px; float:left'}
+    = image_tag @user.avatar.url(:medium)
   %div{:style => 'padding-left: 30px; float:left'}
     .attribute
       .name= I18n.t('txt.users.attributes.name')

@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   CSV_ORDER = [:surname, :name, :phone, :mobile, :fax, :email]
-  ATTS = "name, surname, id, phone, mobile, fax, email, skype, company_id"
+  ATTS = "name, surname, id, phone, mobile, fax, email, skype, company_id, avatar_file_name"
 
-  has_attached_file :avatar, :styles => { :thumb => "100x100>" }, :default_url => "face.png"
 
   belongs_to :company
   has_one :admin
@@ -11,6 +10,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :if => lambda {|user| user.email}
 
   before_save :downcase_all
+
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "35x35>" }, :default_url => "face.png"
 
   def full_name
     "#{surname}, #{name}"
