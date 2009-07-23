@@ -1,9 +1,11 @@
-- form_for @admin_session, :url => admin_session_path do |f|
+%h1= I18n.t('txt.login.title')
+
+- form_for @user_session, :url => user_session_path do |f|
 
   = f.error_messages
   .attribute
-    .name= f.label :login, I18n.t('txt.login.login')
-    .value= f.text_field :login, :size => 20
+    .name= f.label :email
+    .value= f.text_field :email, :size => 20
   .attribute
     .name= f.label :password, I18n.t('txt.login.password')
     .value= f.password_field :password, :size => 20

@@ -113,13 +113,15 @@
     invalid: 'invalid'
     back: 'back'
     or: 'or'
+    sure: 'yes'
+    noway: 'no'
 
     menu:
       home: "home"
       companies: "Brands"
       download: "Download"
       change_profile: "Change your profile"
-      login: "Admin log in"
+      login: "log in"
       files: 'Files'
       admins: 'Admins'
       logout: 'Logout'

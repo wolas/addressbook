@@ -4,7 +4,7 @@
     %title
       = I18n.t('txt.title')
       - if logged_in?
-        == - #{current_admin.user(:select => 'name').name}
+        == - #{current_user.name.capitalize}
 
     = stylesheet_link_tag 'jquery', 'main'
     = javascript_include_tag :defaults
@@ -29,17 +29,13 @@
         - if admin?
           = link_to I18n.t('txt.menu.files'), files_path
           |
-          = link_to I18n.t('txt.menu.admins'), admins_path
-          |
 
         = link_to I18n.t('txt.menu.logout'), logout_url
 
       - else
         = link_to I18n.t('txt.menu.download'), show_download_files_url
         |
-        =link_to I18n.t('txt.menu.change_profile'), service_index_path
-        |
-        = link_to I18n.t('txt.menu.login'), new_admin_session_path
+        = link_to I18n.t('txt.menu.login'), login_url
 
       #language_form
         - form_tag '' do

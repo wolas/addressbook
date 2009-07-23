@@ -1,8 +1,6 @@
 %h1
-  = I18n.t('txt.edit')
-  = I18n.t('txt.users.user')
+  = translate('txt.edit')
+  = @user.name
+  = @user.surname
 
 = render :partial => "form", :locals => {:user => @user}
-
-%br
-= link_to "Cancel", @user

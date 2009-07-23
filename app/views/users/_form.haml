@@ -29,5 +29,15 @@
   .attribute
     .name= f.label :fax, I18n.t('txt.users.attributes.fax')
     .value= f.text_field :fax
+  .attribute
+    .name= f.label :password
+    .value= f.password_field :password
+  .attribute
+    .name= f.label :password_confirmation
+    .value= f.password_field :password_confirmation
+  - if admin?
+    .attribute
+      .name= f.label :admin
+      .value= f.check_box :admin
 
   = f.submit I18n.t('txt.save')

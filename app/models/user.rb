@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
   CSV_ORDER = [:surname, :name, :phone, :mobile, :fax, :email]
   ATTS = "name, surname, id, phone, mobile, fax, email, skype, company_id, avatar_file_name"
-
+  acts_as_authentic
 
   belongs_to :company
-  has_one :admin
 
   validates_presence_of :name, :surname
   validates_uniqueness_of :email, :if => lambda {|user| user.email}
@@ -15,10 +14,6 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{surname}, #{name}"
-  end
-
-  def admin?
-    not admin.nil?
   end
 
   def self.generate_access_code

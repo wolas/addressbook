@@ -37,3 +37,7 @@
         %td
           = link_to image_tag('edit.png', :width => '20px', :alt => I18n.t('txt.edit')), edit_user_path(user)
           = link_to image_tag('bin.png', :width => '15px', :alt => I18n.t('txt.destroy')), user, :method => :delete, :confirm => "#{I18n.t('txt.confirm_delete')} all details for '#{user.full_name}'?"
+
+      - elsif current_user == user
+        %td
+          = link_to image_tag('edit.png', :width => '20px', :alt => I18n.t('txt.edit')), edit_user_path(user)

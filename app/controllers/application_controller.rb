@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_admin_session, :current_admin, :logged_in?
+  helper_method :logged_in?, :current_user, :current_user_session
 
   before_filter :set_locale, :check_language_change
 
@@ -33,29 +33,34 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path)
   end
 
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.user
+  end
+
   def logged_in?
-    current_admin ? true : false
-  end
-
-  def current_admin_session
-    return @current_admin_session if defined?(@current_admin_session)
-    @current_admin_session = AdminSession.find
-  end
-
-  def current_admin
-    return @current_admin if defined?(@current_admin)
-    @current_admin = current_admin_session && current_admin_session.admin
-  end
-
-  def require_admin
-    return authorization_failed! unless admin?
+    current_user ? true : false
   end
 
   def require_user
-    unless current_admin
+    unless current_user
       store_location
       flash[:notice] = "You must be logged in to access this page"
-      redirect_to new_admin_session_url
+      redirect_to login_url
+      return false
+    end
+  end
+
+  def require_admin
+    unless current_user.admin?
+      store_location
+      flash[:notice] = "You must be be and administrator to perform this action"
+      redirect_to login_url
       return false
     end
   end

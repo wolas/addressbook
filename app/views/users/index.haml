@@ -1,9 +1,12 @@
 .two_col{:style => 'width:50%'}
+  - if logged_in?
+    %h1
+      Hello
+      = current_user.name
+
   &nbsp;
   - if admin?
-    %br
-    %br
-    = link_to_function "#{I18n.t('txt.new')} #{I18n.t('txt.users.user')}", :href => new_user_path, :id => 'new_user_link' do |page|
+    = link_to_function "#{I18n.t('txt.new').capitalize} #{I18n.t('txt.users.user')}", :href => new_user_path, :id => 'new_user_link' do |page|
       - page[:create_user].visual_effect :blind_down, :duration => 0.5
       - page[:new_user_link].hide
       - page[:cancel_new_user_link].visual_effect :appear

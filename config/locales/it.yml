@@ -113,6 +113,8 @@
     invalid: 'non valido'
     back: 'indietro'
     or: 'o'
+    sure: 'si'
+    noway: 'non'
 
     menu:
       home: "home"

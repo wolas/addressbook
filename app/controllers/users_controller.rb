@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_admin, :only => [:new, :create, :edit, :update, :destroy]
-  caches_page :search
+  before_filter :require_admin, :only => [:destroy]
+  before_filter :require_current_user, :only => [:edit, :update]
 
   def search
     all = translate('txt.all')
@@ -39,11 +39,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+
   end
 
   def update
-    @user = User.find(params[:id])
     if params[:user][:admin].eql?('0')
       params[:user].delete :password_confirmation
       params[:user].delete :password
@@ -61,5 +60,13 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:notice] = 'User was succesfully deleted.'
     redirect_to root_url
+  end
+
+  def require_current_user
+    @user = User.find(params[:id])
+    if current_user != @user
+      flash[:error] = "You cannot edit this persons details"
+      redirect_back_or_default root_url
+    end
   end
 end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090723103952) do
+ActiveRecord::Schema.define(:version => 20090723145134) do
 
   create_table "admins", :force => true do |t|
     t.string  "login"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(:version => 20090723103952) do
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
+    t.string   "crypted_password",    :default => "",    :null => false
+    t.string   "password_salt",       :default => "",    :null => false
+    t.string   "persistence_token",   :default => "",    :null => false
   end
 
 end
