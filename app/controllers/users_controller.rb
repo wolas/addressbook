@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  require 'redcloth'
+
   before_filter :require_admin, :only => [:destroy]
   before_filter :require_current_user, :only => [:edit, :update]
 

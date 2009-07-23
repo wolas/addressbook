@@ -34,10 +34,18 @@
     .attribute
       .name= translate('txt.users.attributes.company')
       .value= @user.company ? link_to(@user.company.name, @user.company) : translate('txt.none')
+    .attribute
+      .name Website
+      .value
+        %a{:href => "http://#{@user.website}", :target => '_blank'}= @user.website
     - if admin?
       .attribute
         .name Admin
         .value= @user.admin? ? translate('txt.sure') : translate('txt.noway')
+    - if @user.more_information and not @user.more_information.empty?
+      %hr
+      %p= RedCloth.new(@user.more_information).to_html
+
   .clear
 
 %br

@@ -2,13 +2,13 @@
 
 %table.users_table
   %tr
-    %th= I18n.t('txt.users.attributes.name')
-    %th= I18n.t('txt.users.attributes.phone')
-    %th= I18n.t('txt.users.attributes.mobile')
-    %th= I18n.t('txt.users.attributes.email')
-    %th= I18n.t('txt.users.attributes.skype')
+    %th= translate('txt.users.attributes.name')
+    %th= translate('txt.users.attributes.phone')
+    %th= translate('txt.users.attributes.mobile')
+    %th= translate('txt.users.attributes.email')
+    %th= translate('txt.users.attributes.skype')
     - if show_company
-      %th= I18n.t('txt.users.attributes.company')
+      %th= translate('txt.users.attributes.company')
 
   - users.each_with_index do |user, index|
     %tr{:class => index.odd? ? 'even_row' : 'odd_row'}
@@ -35,9 +35,9 @@
 
       - if admin?
         %td
-          = link_to image_tag('edit.png', :width => '20px', :alt => I18n.t('txt.edit')), edit_user_path(user)
-          = link_to image_tag('bin.png', :width => '15px', :alt => I18n.t('txt.destroy')), user, :method => :delete, :confirm => "#{I18n.t('txt.confirm_delete')} all details for '#{user.full_name}'?"
+          = link_to image_tag('edit.png', :width => '20px', :alt => translate('txt.edit')), edit_user_path(user)
+          = link_to image_tag('bin.png', :width => '15px', :alt => translate('txt.destroy')), user, :method => :delete, :confirm => "#{translate('txt.confirm_delete')} all details for '#{user.full_name}'?"
 
       - elsif current_user == user
         %td
-          = link_to image_tag('edit.png', :width => '20px', :alt => I18n.t('txt.edit')), edit_user_path(user)
+          = link_to image_tag('edit.png', :width => '20px', :alt => translate('txt.edit')), edit_user_path(user)
