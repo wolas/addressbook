@@ -191,7 +191,7 @@
 
       thank_you:
         title: 'Grazie'
-        frase1: "Un'email è stata spedita alla tua casella di posta. Leggila per scoprire altre informazioni util per completare la procedura."
+        frase1: "Un'email è stata spedita alla tua casella di posta. Leggila per scoprire altre informazioni utili per completare la procedura."
         frase2: 'Ora puoi chiudere questa finestra.'
 
       email:
