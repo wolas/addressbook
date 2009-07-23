@@ -1,10 +1,4 @@
-.two_col{:style => 'width:50%'}
-  %h1= I18n.t('txt.admin.title')
-
-.two_col{:style => 'width:50%'}
-  = render :partial => 'users/search', :locals => {:company => true}
-
-.clear
+%h1= I18n.t('txt.admin.title')
 
 #search_results
   = render :partial => 'list', :locals => {:users => @users}

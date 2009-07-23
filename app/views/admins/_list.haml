@@ -24,7 +24,9 @@
 
       %td
         .two_col
-          = widget_for user, true
+          %span
+            = image_tag 'face.png', :style => 'vertical-align: middle;'
+            = link_to h(user.full_name), user
 
         .two_col
           - if user.admin?

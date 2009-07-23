@@ -28,7 +28,9 @@ class ServiceController < ApplicationController
   def send_access
     user = User.find_by_email(params[:email].strip)
     if user
-      user.update_attributes :access_code => User.generate_access_code
+      code = User.generate_access_code
+      user.update_attributes :access_code => code
+      logger.info "Access code (#{code}) generated for #{user.name} #{user.surname} at #{Time.now.inspect}"
       Notifier.deliver_send_access(user)
       redirect_to :action => :thank_you
     else
