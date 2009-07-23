@@ -1,7 +1,10 @@
-- form_for user, :url => user do |f|
+- form_for user, :url => user, :html => {:multipart => true} do |f|
 
   = error_messages_for :user
 
+  .attribute
+    .name= f.label :name, I18n.t('txt.users.attributes.avatar')
+    .value= f.file_field :avatar
   .attribute
     .name= f.label :name, I18n.t('txt.users.attributes.company')
     .value= f.collection_select :company_id, Company.all, :id, :name

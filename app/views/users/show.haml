@@ -3,34 +3,39 @@
   account.
 
 #user_show
-  .attribute
-    .name= I18n.t('txt.users.attributes.name')
-    .value= @user.name.capitalize
-  .attribute
-    .name= I18n.t('txt.users.attributes.surname')
-    .value= @user.surname.capitalize
-  .attribute
-    .name= I18n.t('txt.users.attributes.phone')
-    .value= @user.phone
-  .attribute
-    .name= I18n.t('txt.users.attributes.mobile')
-    .value= @user.mobile
-  .attribute
-    .name= I18n.t('txt.users.attributes.fax')
-    .value= @user.fax
-  .attribute
-    .name= I18n.t('txt.users.attributes.email')
-    .value= mail_to @user.email
-  .attribute
-    .name= I18n.t('txt.users.attributes.skype')
-    .value
-      - if @user.skype?
-        %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
-        %a{:href=>"skype:#{@user.skype}?chat"}
-          %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
-  .attribute
-    .name= I18n.t('txt.users.attributes.company')
-    .value= @user.company ? link_to(@user.company.name, @user.company) : I18n.t('txt.none')
+  %div{:style => 'width: 200px; float:left'}
+    = image_tag @user.avatar.url, :width => "200px"
+  %div{:style => 'padding-left: 30px; float:left'}
+    .attribute
+      .name= I18n.t('txt.users.attributes.name')
+      .value= @user.name.capitalize
+    .attribute
+      .name= I18n.t('txt.users.attributes.surname')
+      .value= @user.surname.capitalize
+    .attribute
+      .name= I18n.t('txt.users.attributes.phone')
+      .value= @user.phone
+    .attribute
+      .name= I18n.t('txt.users.attributes.mobile')
+      .value= @user.mobile
+    .attribute
+      .name= I18n.t('txt.users.attributes.fax')
+      .value= @user.fax
+    .attribute
+      .name= I18n.t('txt.users.attributes.email')
+      .value= mail_to @user.email
+    .attribute
+      .name= I18n.t('txt.users.attributes.skype')
+      .value
+        - if @user.skype?
+          %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
+          %a{:href=>"skype:#{@user.skype}?chat"}
+            %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
+    .attribute
+      .name= I18n.t('txt.users.attributes.company')
+      .value= @user.company ? link_to(@user.company.name, @user.company) : I18n.t('txt.none')
+  .clear
+
 %br
 - if admin?
   #update_user{:style => 'display:none;'}

@@ -115,10 +115,11 @@
     or: 'o'
 
     menu:
+      home: "home"
       companies: "Brands"
       download: "Download"
       change_profile: "Cambia il tuo profilo"
-      login: "Log in"
+      login: "Log in Admin"
       files: 'Archivi'
       admins: 'Amministratore'
       logout: 'Log out'
@@ -139,6 +140,7 @@
       my_account: 'Il mio profilo'
 
       attributes:
+        avatar: 'Foto'
         name: 'Nome'
         surname: 'Cognome'
         phone: 'Telefono'

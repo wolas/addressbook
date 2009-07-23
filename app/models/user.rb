@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   CSV_ORDER = [:surname, :name, :phone, :mobile, :fax, :email]
   ATTS = "name, surname, id, phone, mobile, fax, email, skype, company_id"
 
+  has_attached_file :avatar, :styles => { :thumb => "100x100>" }, :default_url => "face.png"
+
   belongs_to :company
   has_one :admin
 

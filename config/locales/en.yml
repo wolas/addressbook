@@ -115,10 +115,11 @@
     or: 'or'
 
     menu:
+      home: "home"
       companies: "Brands"
       download: "Download"
       change_profile: "Change your profile"
-      login: "Log in"
+      login: "Admin log in"
       files: 'Files'
       admins: 'Admins'
       logout: 'Logout'
@@ -139,6 +140,7 @@
       your_account: 'your account'
 
       attributes:
+        name: 'Avatar'
         name: 'Name'
         surname: 'Surname'
         phone: 'Phone'
