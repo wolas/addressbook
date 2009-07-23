@@ -64,7 +64,7 @@ class UsersController < ApplicationController
 
   def require_current_user
     @user = User.find(params[:id])
-    if current_user != @user
+    unless (current_user == @user) or admin?
       flash[:error] = "You cannot edit this persons details"
       redirect_back_or_default root_url
     end

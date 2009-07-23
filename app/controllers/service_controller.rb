@@ -1,14 +1,6 @@
 class ServiceController < ApplicationController
   def index
-  end
 
-  def edit
-    @user = User.find_by_access_code params[:access_code]
-
-    unless @user
-      flash[:error] = 'Your access code has expired or has already been used. Retry the process please.'
-      redirect_to :action => :index
-    end
   end
 
   def update
