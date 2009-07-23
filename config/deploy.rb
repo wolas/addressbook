@@ -17,6 +17,6 @@ server "152.146.39.15", :app, :web, :db, :primary => true
 
 namespace :deploy do
   task :restart do
-    run run "sudo -p 'sudo password: ' god restart addressbook"
+    run "sudo -p 'sudo password: ' god restart addressbook"
   end
 end
