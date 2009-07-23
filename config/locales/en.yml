@@ -140,7 +140,7 @@
       your_account: 'your account'
 
       attributes:
-        name: 'Avatar'
+        avatar: 'Avatar'
         name: 'Name'
         surname: 'Surname'
         phone: 'Phone'
