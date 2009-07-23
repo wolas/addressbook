@@ -65,4 +65,5 @@
     - page[:cancel_edit_user_link].hide
     - page[:edit_user_link].visual_effect :appear
 - if admin?
+  |
   = link_to translate('txt.destroy').capitalize, @user, :method => :delete, :confirm => "#{I18n.t('txt.confirm_delete')} all details for '#{@user.full_name}'?"
