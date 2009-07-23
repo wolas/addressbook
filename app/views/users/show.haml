@@ -27,8 +27,10 @@
       .value
         - if @user.skype?
           %script{:type=>"text/javascript", :src=>"http://download.skype.com/share/skypebuttons/js/skypeCheck.js"}
-          %a{:href=>"skype:#{@user.skype}?chat"}
-            %img{:src=>"http://mystatus.skype.com/smallclassic/#{@user.skype}", :style=>"border: none;", :width=>"114", :height=>"20", :alt=>"My status"}
+          %span
+            %a{:href => "skype:#{user.skype}?chat"}
+              = image_tag "http://mystatus.skype.com/mediumicon/#{user.skype}", :class=>"skype", :alt=>"My status"
+              = user.skype
     .attribute
       .name= translate('txt.users.attributes.company')
       .value= @user.company ? link_to(@user.company.name, @user.company) : translate('txt.none')
