@@ -134,6 +134,7 @@
       confirmation: 'Conferma la password'
       remember: 'Ricorda la mia password.'
       welcome_msg: 'Benvenuto'
+      login_message: 'Il tuo nome utente corrisponde alla tua email e la password di default è 12345678. La password può essere cambiata dalla pagine del profilo personale.'
 
     users:
       users_word: 'utenti'

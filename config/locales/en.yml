@@ -134,6 +134,7 @@
       confirmation: 'password confirmation'
       remember: 'Remember me'
       welcome_msg: 'Welcome to the admin area'
+      login_message: 'Your username is your email address and the default password is 12345678 which you will be able to change when you edit your profile.'
 
     users:
       users_word: 'users'
