@@ -2,7 +2,7 @@
 %html
   %head
     %title
-      = I18n.t('txt.title')
+      = translate('txt.title')
       - if logged_in?
         == - #{current_user.name.capitalize}
 
@@ -20,22 +20,24 @@
 
       &nbsp;
 
-      = link_to I18n.t('txt.menu.home'), root_url
+      = link_to translate('txt.menu.home'), root_url
       |
-      = link_to I18n.t('txt.menu.companies'), companies_url
+      = link_to translate('txt.menu.companies'), companies_url
       |
 
       - if logged_in?
         - if admin?
-          = link_to I18n.t('txt.menu.files'), files_path
+          = link_to translate('txt.menu.files'), files_path
+          |
+          = link_to 'admins', roles_path
           |
 
-        = link_to I18n.t('txt.menu.logout'), logout_url
+        = link_to translate('txt.menu.logout'), logout_url
 
       - else
-        = link_to I18n.t('txt.menu.download'), show_download_files_url
+        = link_to translate('txt.menu.download'), show_download_files_url
         |
-        = link_to I18n.t('txt.menu.login'), login_url
+        = link_to translate('txt.menu.login'), login_url
 
       #language_form
         - form_tag '' do

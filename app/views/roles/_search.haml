@@ -1,0 +1,17 @@
+#search_form
+  - company ||= nil
+
+  - form_tag '', :id => :search, :onsubmit => "return false;"  do
+    .attribute
+      .name= I18n.t('txt.users.search')
+      .value= text_field_tag :name
+
+      - if company
+        = hidden_field_tag :company, company.id
+
+      - else
+        &nbsp;
+        .value= select_tag :company, "<option>#{I18n.t('txt.all')}</option>" + options_from_collection_for_select(Company.all, 'id', 'name'), :include_blank => true
+
+  = observe_form :search, :url => { :controller => :roles, :action => :search }, :frequency => 0.25, :update => :search_results
+  %br

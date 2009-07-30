@@ -1,0 +1,11 @@
+.two_col{:style => 'width:50%'}
+  - if logged_in?
+    %h1 Admin Section
+
+.two_col{:style => 'width:50%'}
+  = render :partial => 'search'
+
+.clear
+
+#search_results
+  = render :partial => 'list', :locals => {:users => @users}

@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :service, :collection => {:thank_you => :get, :get_access => :get}, :member => {:external_edit => :get}
 
   map.resource :user_session
+  map.resource :roles
 
   map.root :controller => "users"
   map.login 'login', :controller => 'user_sessions', :action => 'new'

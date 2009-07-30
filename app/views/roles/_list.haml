@@ -1,0 +1,17 @@
+- show_company ||= false
+
+%table.users_table
+  %tr
+    %th{:width => '70px'} Admin?
+    %th= translate('txt.users.attributes.name')
+
+  - users.each_with_index do |user, index|
+    %tr{:class => index.odd? ? 'even_row' : 'odd_row'}
+      %td{:style => 'text-align: center;'}
+        - form_for user, :url => {:controller => 'roles', :action => 'update', :id => user} do |f|
+          = f.check_box :admin, :onchange => 'this.form.submit();'
+
+      %td.name_cell
+        %span
+          = image_tag user.avatar.url(:thumb), :style => 'vertical-align: middle;'
+          = link_to h(user.full_name), user
