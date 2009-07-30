@@ -115,6 +115,7 @@
     or: 'or'
     sure: 'yes'
     noway: 'no'
+    change: 'change'
 
     menu:
       home: "home"
