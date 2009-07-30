@@ -30,12 +30,6 @@
     .name= f.label :fax, translate('txt.users.attributes.fax')
     .value= f.text_field :fax
   .attribute
-    .name= f.label :password
-    .value= f.password_field :password
-  .attribute
-    .name= f.label :password_confirmation
-    .value= f.password_field :password_confirmation
-  .attribute
     .name= f.label :website
     .value= f.text_field :website
   .attribute
@@ -47,10 +41,5 @@
         here
 
     .value= f.text_area :more_information, :cols => 50, :rows => 7
-
-  - if admin?
-    .attribute
-      .name= f.label :admin
-      .value= f.check_box :admin
 
   = f.submit translate('txt.save')

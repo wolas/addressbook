@@ -3,4 +3,7 @@
   = @user.name
   = @user.surname
 
-= render :partial => "form", :locals => {:user => @user}
+.two_col= render :partial => "form", :locals => {:user => @user}
+
+.two_col{:style => 'width: 35%; padding-left: 10%;'}
+  .widget= render :partial => 'password_form', :locals => {:user => @user}

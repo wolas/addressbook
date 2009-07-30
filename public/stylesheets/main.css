@@ -116,6 +116,12 @@ h4 {
 .small {
   font-size: 0.7em; }
 
+.widget {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px; }
+
 #search_form {
   float: right;
   padding-top: 25px; }

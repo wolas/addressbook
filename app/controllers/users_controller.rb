@@ -45,11 +45,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:user][:admin].eql?('0')
-      params[:user].delete :password_confirmation
-      params[:user].delete :password
-    end
-
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to @user

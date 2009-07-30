@@ -1,4 +1,5 @@
 class RolesController < ApplicationController
+  before_filter :require_admin
 
   def search
     all = translate('txt.all')
