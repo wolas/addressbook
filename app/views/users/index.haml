@@ -1,7 +1,7 @@
 .two_col{:style => 'width:50%'}
   - if logged_in?
     %h1
-      Hello
+      = translate 'txt.greeting'
       = current_user.name
 
   &nbsp;

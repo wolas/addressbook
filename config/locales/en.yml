@@ -116,6 +116,7 @@
     sure: 'yes'
     noway: 'no'
     change: 'change'
+    greeting: 'hello'
 
     menu:
       home: "home"

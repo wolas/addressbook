@@ -41,7 +41,7 @@ end
 
 ActionMailer::Base.delivery_method = :sendmail
 
-I18n.default_locale = 'en'
+I18n.default_locale = 'it'
 
 LOCALES_DIRECTORY = "#{RAILS_ROOT}/config/locales"
 LOCALES_AVAILABLE = Dir["#{LOCALES_DIRECTORY}/*.{rb,yml}"].collect do |locale_file|
