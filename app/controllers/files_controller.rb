@@ -16,19 +16,19 @@ class FilesController < ApplicationController
       redirect_to(:action => :index) and return
     end
 
-    FasterCSV.foreach(params[:file].path, :quote_char => '"', :skip_blanks => true) do |surname, name, phone, mobile, email|
+    FasterCSV.foreach(params[:file].path, :quote_char => '"', :skip_blanks => true) do |name, mobile|
       next if name.nil?
       next if name.include?('Name') or name.include?('name')
 
-      user = User.first(:conditions => {:name => name.strip.downcase, :surname => surname.strip.downcase, :company_id => params[:user][:company]})
+      puts name
+      puts
+
+      user = User.all.map { |user| user if ("#{user.surname} #{user.name}".downcase.strip == name.gsub(',', '').downcase.strip) and (user.company_id == params[:user][:company].to_i)}.compact.first
+
       if user
-        user.phone = phone if phone
-        user.email = email if email
-        user.mobile = mobile if mobile
+        user.update_attribute :mobile, mobile
       else
-        company = Company.find_by_id params[:user][:company]
-        email = "#{name.gsub(' ', '')}.#{surname.gsub(' ', '')}@#{company}.com"
-        user = User.new :company_id => company, :name => name, :surname => surname, :phone => phone, :mobile => mobile, :email => email
+        user = User.new :name => name, :mobile => mobile
       end
 
       if params[:dry] ? user.valid? : user.save
