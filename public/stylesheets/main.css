@@ -32,6 +32,9 @@ img {
     padding-right: 2px;
     padding-left: 2px; }
 
+#language_form {
+  float: right; }
+
 a {
   color: #008ecf;
   text-decoration: none; }
@@ -50,6 +53,7 @@ th {
 
 h1 {
   padding-left: 80px;
+  padding-top: 20px;
   font-size: 1.9em;
   color: #999;
   text-transform: uppercase; }

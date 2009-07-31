@@ -7,6 +7,10 @@
         == - #{current_user.name.capitalize}
 
     = stylesheet_link_tag 'jquery', 'main'
+
+    /[if IE]
+      = stylesheet_link_tag 'ie'
+
     = javascript_include_tag :defaults
     = javascript_include_tag 'skype'
 
@@ -39,30 +43,33 @@
         |
         = link_to translate('txt.menu.login'), login_url
 
-      #language_form
-        - form_tag '' do
-          = select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'})
+    #language_form
+      - form_tag '' do
+        = select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'})
 
+    /[if IE]
+      .clear
 
+    - if flash[:notice] or flash[:error]
+      #flash
+        - if notice = flash[:notice]
+          .ui-state-highlight.widget
+            .flash_controls
+              = link_to_function 'x' do |page|
+                - page[:flash].visual_effect :blind_up, :duration => 0.5
+            %p
+              %span{:class => "ui-icon ui-icon-info", :style => "float: left; margin-right: 0.3em;"}
+              = notice
 
-    #flash
-      - if notice = flash[:notice]
-        .ui-state-highlight.widget
-          .flash_controls
-            = link_to_function 'x' do |page|
-              - page[:flash].visual_effect :blind_up, :duration => 0.5
-          %p
-            %span{:class => "ui-icon ui-icon-info", :style => "float: left; margin-right: 0.3em;"}
-            = notice
+        - if error = flash[:error]
+          .ui-state-error.widget
+            .flash_controls
+              = link_to_function 'x' do |page|
+                - page[:flash].visual_effect :blind_up, :duration => 0.5
+            %p
+              %span{:class => "ui-icon ui-icon-alert", :style => "float: left; margin-right: 0.3em;"}
+              = error
 
-      - if error = flash[:error]
-        .ui-state-error.widget
-          .flash_controls
-            = link_to_function 'x' do |page|
-              - page[:flash].visual_effect :blind_up, :duration => 0.5
-          %p
-            %span{:class => "ui-icon ui-icon-alert", :style => "float: left; margin-right: 0.3em;"}
-            = error
+      .clear
 
-    .clear
     #content= yield

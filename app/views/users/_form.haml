@@ -32,6 +32,15 @@
   .attribute
     .name= f.label :website
     .value= f.text_field :website
+
+  - if user.new_record?
+    .attribute
+      .name= f.label :password
+      .value= f.password_field :password, :value => '12345678'
+    .attribute
+      .name= f.label :password_confirmation, 'Confirm Password'
+      .value= f.password_field :password_confirmation, :value => '12345678'
+
   .attribute
     .name
       = f.label :more_information
