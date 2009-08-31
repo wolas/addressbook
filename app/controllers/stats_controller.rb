@@ -1,6 +1,4 @@
 class StatsController < ApplicationController
-  require 'gruff'
-  require 'tempfile'
   
   # GET /stats
   def index
