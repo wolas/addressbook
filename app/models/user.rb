@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   CSV_ORDER = [:surname, :name, :phone, :mobile, :fax, :email]
   ATTS = "name, surname, id, phone, mobile, fax, email, skype, company_id, avatar_file_name"
-  acts_as_authentic
-
+  acts_as_authentic(:validate_email_field => false, :validate_login_field => false)
   belongs_to :company
 
   validates_presence_of :name, :surname
