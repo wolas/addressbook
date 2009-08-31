@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :surname
   validates_uniqueness_of :email, :if => lambda {|user| user.email}
+  validates_uniqueness_of :login
 
   before_save :downcase_all
 
