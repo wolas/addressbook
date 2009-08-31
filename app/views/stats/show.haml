@@ -1,0 +1,22 @@
+#stat_show
+  .attribute
+    .name Time:
+    .value=h @stat.time 
+
+#update_stat{:style => 'display:none;'}
+  = render :partial => 'form', :locals => {:stat => @stat }
+
+= link_to_function 'Edit', :href => edit_stat_path(@stat), :id => "edit_stat_link" do |page|
+  - page[:stat_show].visual_effect :blind_up, :duration => 0.5
+  - page[:update_stat].visual_effect :blind_down, :duration => 0.5
+  - page[:edit_stat_link].hide
+  - page[:cancel_edit_stat_link].visual_effect :appear
+
+= link_to_function 'Cancel', :href => edit_stat_path(@stat), :id => 'cancel_edit_stat_link', :style => "display:none;" do |page|
+  - page[:stat_show].visual_effect :blind_down, :duration => 0.5
+  - page[:update_stat].visual_effect :blind_up, :duration => 0.5
+  - page[:cancel_edit_stat_link].hide
+  - page[:edit_stat_link].visual_effect :appear
+
+|
+= link_to 'Back', stats_path

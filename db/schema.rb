@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090804153512) do
+ActiveRecord::Schema.define(:version => 20090825144605) do
 
   create_table "admins", :force => true do |t|
     t.string  "login"
@@ -19,14 +19,10 @@ ActiveRecord::Schema.define(:version => 20090804153512) do
     t.integer "user_id"
   end
 
-  create_table "brands", :force => true do |t|
-    t.string "name"
-  end
-
   create_table "clients", :force => true do |t|
     t.string  "name"
     t.text    "description"
-    t.integer "brand_id"
+    t.integer "company_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -67,10 +63,8 @@ ActiveRecord::Schema.define(:version => 20090804153512) do
     t.text     "description"
     t.boolean  "closed",      :default => false
     t.string   "colour"
-    t.string   "state"
-    t.string   "priority"
-    t.string   "account"
     t.integer  "manager_id"
+    t.integer  "account_id"
   end
 
   create_table "projects_users", :id => false, :force => true do |t|
@@ -89,6 +83,10 @@ ActiveRecord::Schema.define(:version => 20090804153512) do
     t.integer "role_id"
   end
 
+  create_table "stats", :force => true do |t|
+    t.datetime "time"
+  end
+
   create_table "stories", :force => true do |t|
     t.integer  "parent_id"
     t.string   "parent_type"
@@ -104,6 +102,8 @@ ActiveRecord::Schema.define(:version => 20090804153512) do
     t.boolean  "completed",   :default => false, :null => false
     t.text     "description"
     t.datetime "start_date"
+    t.string   "state"
+    t.string   "priority"
   end
 
   create_table "tasks_art_director", :id => false, :force => true do |t|
@@ -167,6 +167,9 @@ ActiveRecord::Schema.define(:version => 20090804153512) do
     t.string   "website"
     t.text     "more_information"
     t.string   "login"
+    t.string   "face_file_name"
+    t.string   "face_content_type"
+    t.integer  "face_file_size"
   end
 
   create_table "users_stories", :force => true do |t|

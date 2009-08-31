@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :stats
+
   map.resources :companies, :has_many => [:users]
   map.resources :users
   map.resources :roles

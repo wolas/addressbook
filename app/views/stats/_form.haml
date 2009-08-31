@@ -1,0 +1,9 @@
+.stat_form
+  -form_for stat do |f|
+    = f.error_messages
+    
+    .attribute
+      .name= f.label :time
+      .value= f.datetime_select :time 
+    
+    .stat_submit_button= f.submit "Save"

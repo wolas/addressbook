@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all :select => User::ATTS, :order => 'surname ASC', :include => :company
+    Stat.create
   end
 
   def new
