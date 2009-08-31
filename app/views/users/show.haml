@@ -4,12 +4,13 @@
   %div{:style => 'width: 300px; float:left'}
     = image_tag @user.avatar.url(:medium)
   %div{:style => 'padding-left: 30px; float:left'}
-    .attribute
-      .name Username
-      .value= @user.login
+    
     .attribute
       .name= translate('txt.users.attributes.name')
       .value= @user.name.capitalize
+    .attribute
+      .name Username
+      .value= @user.login  
     .attribute
       .name= translate('txt.users.attributes.surname')
       .value= @user.surname.capitalize
