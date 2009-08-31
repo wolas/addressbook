@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all :select => User::ATTS, :order => 'surname ASC', :include => :company
-    Stat.create
+    Stat.create :time => DateTime.now
   end
 
   def new
