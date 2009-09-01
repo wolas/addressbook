@@ -1,7 +1,7 @@
+%p= error_messages_for :user
+
 .two_col
   - form_for user, :url => user, :html => {:multipart => true} do |f|
-
-    = error_messages_for :user
 
     .attribute
       .name= f.label :avatar, translate('txt.users.attributes.avatar')
@@ -60,8 +60,6 @@
 - unless user.new_record?
   .two_col{:style => 'width: 35%; padding-left: 10%;'}
     - form_for user, :url => user, :html => {:multipart => true} do |f|
-
-      = error_messages_for :user
 
       .attribute
         .name= f.label :password
