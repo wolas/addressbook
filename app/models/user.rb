@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   acts_as_authentic(:validate_email_field => false, :validate_login_field => false)
   belongs_to :company
 
-  validates_presence_of :name, :surname, :password
+  validates_presence_of :name, :surname
   validates_uniqueness_of :email, :if => lambda {|user| user.email}
   validates_uniqueness_of :login
 
