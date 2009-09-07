@@ -1,5 +1,17 @@
-%h1 Stats
+%h1 
+  Stats
 
-= bar_graph  [["foo", 45]] + @stats
 
-= h @stats.inspect
+  %div{:style => "float: right"}
+    - form_remote_tag :url => url_for(:controller => "stats", :action => "change_dates"), :update => "stats"  do |f|
+      .attribute
+        .name= select_tag :range, options_for_select([["last week", 7], ["1 month", 30], ["3 months", 90], ["6 months", 180], ["1 year", 365]]), :onchange => ""
+        .value= submit_tag "Go"
+    
+#stats{:style => "margin: 0 auto; width: 1100px;padding-top: 15px"}
+  = render :partial => "graph", :locals => {:stats => @stats}
+
+%br
+%br
+%br
+
